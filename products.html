@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products - Mizuion - Hydrogen Rich Alkaline Water Ionizer</title>
+  <meta name="description"
+    content="Explore Mizuion hydrogen rich alkaline water ionizers - Domestic and Commercial models for homes and offices.">
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%A7%3C/text%3E%3C/svg%3E">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'tech-blue': '#0A2B4E',
+            'teal-clean': '#00A8A8',
+            'soft-white': '#F8FAFC',
+            'light-aqua': '#E0F2FE',
+            'h-cyan': '#00D2FF',
+            'h-blue': '#3A7BD5',
+          },
+          fontFamily: {
+            heading: ['Poppins', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1E293B;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    #navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background-color: #0A2B4E !important;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .nav-link {
+      position: relative;
+      padding-bottom: 4px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #00D2FF, #3A7BD5);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    #mobile-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease-in-out;
+      background-color: rgba(10, 43, 78, 0.95);
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+
+    #mobile-menu.open {
+      max-height: 400px;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #00D2FF 0%, #3A7BD5 100%);
+      color: white;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      padding: 0.875rem 1.75rem;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(0, 210, 255, 0.35);
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .stretched-link::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      content: "";
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header / Navbar -->
+  <nav id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between py-4">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="Logo.png" alt="Mizuion Logo" class="w-10 h-10 object-contain shadow-lg">
+        <div class="leading-tight">
+          <div class="font-heading font-bold text-xl text-white">Mizuion<sup style="font-size: 0.5em;">™</sup></div>
+          <div class="text-[11px] uppercase tracking-wider text-light-aqua/90">by Jagdamba Associates</div>
+        </div>
+      </a>
+      <ul class="hidden md:flex items-center gap-8 text-white font-medium" style="list-style: none;">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="products.html" class="nav-link">Products</a></li>
+        <li><a href="about.html" class="nav-link">About Us</a></li>
+        <li><a href="mission.html" class="nav-link">Mission</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="hidden md:flex items-center gap-4">
+        <a href="Mizuion-Product%20Brochure%20.pdf" download class="hidden lg:inline-flex items-center gap-2 bg-transparent text-white font-semibold border border-white/60 py-2.5 px-5 rounded-full hover:bg-white hover:text-tech-blue transition-all duration-300 text-sm">
+          <i class="fa-solid fa-file-pdf"></i> Download Brochure
+        </a>
+        <a href="tel:9970007580" class="btn-primary">
+          <i class="fa-solid fa-phone-volume mr-2"></i> Call Now
+        </a>
+      </div>
+      <button id="menu-toggle" aria-label="Toggle menu"
+        class="md:hidden text-white bg-transparent border-none text-2xl cursor-pointer">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+    <div id="mobile-menu">
+      <ul class="px-6 py-4 space-y-3 text-white font-medium" style="list-style: none;">
+        <li><a href="index.html" class="block py-2 text-white" style="text-decoration: none;">Home</a></li>
+        <li><a href="products.html" class="block py-2 text-white" style="text-decoration: none;">Products</a></li>
+        <li><a href="about.html" class="block py-2 text-white" style="text-decoration: none;">About Us</a></li>
+        <li><a href="mission.html" class="block py-2 text-white" style="text-decoration: none;">Mission</a></li>
+        <li><a href="contact.html" class="block py-2 text-white" style="text-decoration: none;">Contact</a></li>
+        <li><a href="Mizuion-Product%20Brochure%20.pdf" download class="block py-2 mt-2 text-center text-white font-semibold border border-white/40 rounded-full hover:bg-white/10 transition-all" style="text-decoration: none;"><i class="fa-solid fa-file-pdf mr-2"></i>Download Brochure</a></li>
+        <li><a href="tel:9970007580" class="block py-2 mt-2 text-center btn-primary rounded-full"
+            style="text-decoration: none;">Call Now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <section class="pt-32 pb-16" style="background: linear-gradient(135deg, #0A2B4E, #3A7BD5);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-white mb-4">Our Products</h1>
+      <p class="text-lg text-light-aqua/90 max-w-2xl mx-auto">Premium hydrogen rich alkaline water ionizers for homes
+        and businesses.</p>
+    </div>
+    <div class="mt-8" style="text-align: center;">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style="height: 40px; width: 100%;">
+        <path fill="#F8FAFC" d="M0,40 Q360,80 720,40 T1440,40 V80 H0 Z"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- PRODUCTS CONTENT -->
+  <section class="py-16" style="background-color: #F8FAFC;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- Domestic Wall Mounted and Countertop Products -->
+      <div class="mb-20">
+        <div class="flex items-center gap-3 mb-8">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center shadow-lg"
+            style="background: linear-gradient(135deg, #00D2FF, #3A7BD5);">
+            <i class="fa-solid fa-home text-white text-xl"></i>
+          </div>
+          <h2 class="font-heading font-bold text-3xl" style="color: #0A2B4E;">Wall mounted and countertop models</h2>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Product 1: MIP7.1 -->
+          <div class="product-card flex flex-col justify-between group">
+            <a href="product-mip71.html" class="stretched-link" aria-label="View Mizuion MIP 7.1 details"></a>
+            <div
+              class="h-80 md:h-96 overflow-hidden relative bg-white flex items-center justify-center p-6 border-b border-slate-100">
+              <img src="products/MODEL NO. MIP7.1.jpg" alt="Mizuion MIP 7.1"
+                class="h-full w-full object-contain transition-transform duration-500 group-hover:scale-110">
+            </div>
+            <div class="p-6 pb-0 flex-grow">
+              <h3 class="font-heading font-bold text-xl mb-1 group-hover:text-teal-clean transition-colors"
+                style="color: #0A2B4E;">Mizuion<sup>™</sup> MIP 7.1</h3>
+              <p class="text-xs mb-3 font-semibold uppercase tracking-wider text-slate-400">Model: MIP7.1</p>
+              <div class="flex items-baseline gap-2 mb-3">
+                <span class="text-2xl font-bold" style="color: #00A8A8;">₹48,775/-</span>
+                <span class="text-xs text-slate-500 font-medium">7 Plates</span>
+              </div>
+              <p class="text-xs mb-4 text-slate-500 font-medium">5 Years Warranty</p>
+              <p class="text-sm mb-4" style="color: #475569;">Perfect entry-level antioxidant hydrogen-rich water
+                ionizer for small families.</p>
+              <ul class="text-sm space-y-2 mb-6" style="color: #64748B; list-style: none;">
+                <li><i class="fa-solid fa-circle-check mr-2 text-teal-clean"></i> pH Range: 4.5 to 9.5</li>
+                <li><i class="fa-solid fa-circle-check mr-2 text-teal-clean"></i> ORP: up to -500 mV</li>
+                <li><i class="fa-solid fa-circle-check mr-2 text-teal-clean"></i> Operating Voltage: 24V DC</li>
+                <li><i class="fa-solid fa-circle-check mr-2 text-teal-clean"></i> No wastage of single drop of water.</li>
+              </ul>
+            </div>
+            <div class="p-6 pt-0 relative z-10">
+              <div class="flex mt-6">
+                <a href="contact.html" class="btn-primary w-full justify-center text-sm py-3">
+                  <i class="fa-solid fa-paper-plane"></i> Enquire Now
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 2: MIP7.2 -->
+          <div class="product-card flex flex-col justify-between group">
+            <a href="product-mip72.html" class="stretched-link" aria-label="View Mizuion MIP 7.2 details"></a>
+            <div
+              class="h-80 md:h-96 overflow-hidden relative bg-white flex items-center justify-center p-6 border-b border-slate-100">
+              <img src="products/MODEL NO. MIP7.2.jpg" alt="Mizuion MIP 7.2"
+                class="h-full w-full object-contain transition-transform duration-500 group-hover:scale-110">
+            </div>
+            <div class="p-6 pb-0 flex-grow">
+              <h3 class="font-heading font-bold text-xl mb-1 group-hover:text-teal-clean transition-colors"
+                style="color: #0A2B4E;">Mizuion<sup>™</sup> MIP 7.2</h3>
+              <p class="text-xs mb-3 font-semibold uppercase tracking-wider text-slate-400">Model: MIP7.2</p>
+              <div class="flex items-baseline gap-2 mb-3">
+                <span class="text-2xl font-bold" style="color: #00A8A8;">₹98,775/-</span>
+                <span class="text-xs text-slate-500 font-medium">7 Plates</span>
+              </div>
+              <p class="text-xs mb-4 text-slate-500 font-medium">5 Years Warranty</p>
+              <p class="text-sm mb-4" style="color: #475569;">Premium wall mounted and countertop model with 7 plates.</p>
+              <ul class="text-sm space-y-2 mb-6" style="color: #64748B; list-style: none;">
+                <li><i class="fa-solid fa-circle-check mr-2 text-teal-clean"></i> pH Range: 3.5 to 10.5</li>
+                <li><i class="fa-solid fa-circle-check mr-2 text-teal-clean"></i> ORP: up to -600 mV</li>
+                <li><i class="fa-solid fa-circle-check mr-2 text-teal-clean"></i> Operating Voltage: 24V DC</li>
+                <li><i class="fa-solid fa-circle-check mr-2 text-teal-clean"></i> No wastage of single drop of water.</li>
+              </ul>
+            </div>
+            <div class="p-6 pt-0 relative z-10">
+              <div class="flex mt-6">
+                <a href="contact.html" class="btn-primary w-full justify-center text-sm py-3">
+                  <i class="fa-solid fa-paper-plane"></i> Enquire Now
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Product 3: MIP7.3 -->
+          <div class="product-card flex flex-col justify-between group">
+            <a href="product-mip73.html" class="stretched-link" aria-label="View Mizuion MIP 7.3 details"></a>
+            <div
+              class="h-80 md:h-96 overflow-hidden relative bg-white flex items-center justify-center p-6 border-b border-slate-100">
+              <img src="products/mip2.3.png" alt="Mizuion MIP 7.3"
+                class="h-full w-full object-contain transition-transform duration-500 group-hover:scale-110">
+            </div>
+            <div class="p-6 pb-0 flex-grow">
+              <h3 class="font-heading font-bold text-xl mb-1 group-hover:text-teal-clean transition-colors"
+                style="color: #0A2B4E;">Mizuion<sup>™</sup> MIP 7.3</h3>
+              <p class="text-xs mb-3 font-semibold uppercase tracking-wider text-slate-400">Model: MIP7.3</p>
+              <div class="flex items-baseline gap-2 mb-3">
+                <span class="text-2xl font-bold" style="color: #00A8A8;">₹1,48,775/-</span>
+                <span class="text-xs text-slate-500 font-medium">7 Plates</span>
+              </div>
+              <p class="text-xs mb-4 text-slate-500 font-medium">5 Years Warranty</p>
+              <p class="text-sm mb-4" style="color: #475569;">Flagship wall mounted and countertop model with 7 plates.</p>
+              <ul class="text-sm space-y-2 mb-6" style="color: #64748B; list-style: none;">
+                <li><i class="fa-solid fa-circle-check mr-2 text-teal-clean"></i> pH Range: 2.5 to 11.5</li>
+                <li><i class="fa-solid fa-circle-check mr-2 text-teal-clean"></i> ORP: up to -700 mV</li>
+                <li><i class="fa-solid fa-circle-check mr-2 text-teal-clean"></i> Operating Voltage: 24V DC</li>
+                <li><i class="fa-solid fa-circle-check mr-2 text-teal-clean"></i> No wastage of single drop of water.</li>
+              </ul>
+            </div>
+            <div class="p-6 pt-0 relative z-10">
+              <div class="flex mt-6">
+                <a href="contact.html" class="btn-primary w-full justify-center text-sm py-3">
+                  <i class="fa-solid fa-paper-plane"></i> Enquire Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Undersink Products -->
+      <div class="mb-20">
+        <div class="flex items-center gap-3 mb-8">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center shadow-lg"
+            style="background: linear-gradient(135deg, #00D2FF, #3A7BD5);">
+            <i class="fa-solid fa-sink text-white text-xl"></i>
+          </div>
+          <h2 class="font-heading font-bold text-3xl" style="color: #0A2B4E;">Undersink Models</h2>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Undersink Bluetooth -->
+          <div class="product-card flex flex-col justify-between group">
+            <a href="product-undersink-bluetooth.html" class="stretched-link"
+              aria-label="View Mizuion Undersink Bluetooth details"></a>
+            <div
+              class="h-80 md:h-96 overflow-hidden relative bg-white flex items-center justify-center p-6 border-b border-slate-100">
+              <img src="products/undersink Bluetooth Connected.jpg" alt="Mizuion Undersink Bluetooth Connected"
+                class="h-full w-full object-contain transition-transform duration-500 group-hover:scale-110">
+            </div>
+            <div class="p-6 pb-0 flex-grow">
+              <h3 class="font-heading font-bold text-xl mb-1 group-hover:text-teal-clean transition-colors"
+                style="color: #0A2B4E;">Mizuion<sup>™</sup> Undersink (Wireless Smart Touch Panel)</h3>
+              <p class="text-xs mb-3 font-semibold uppercase tracking-wider text-slate-400">Model: MIUS7.1</p>
+              <div class="flex items-baseline gap-2 mb-3">
+                <span class="text-2xl font-bold" style="color: #00A8A8;">₹2,38,775/-</span>
+                <span class="text-xs text-slate-500 font-medium">Standard 7 Plates</span>
+              </div>
+              <p class="text-xs mb-4 text-slate-500 font-medium">9/11 plate upgrades available | 5 Years Warranty</p>
+              <p class="text-sm mb-4" style="color: #475569;">Smart, clutter-free undersink model with 7 plates standard (9/11 plate upgrades available).</p>
+              <ul class="text-sm space-y-2 mb-6" style="color: #64748B; list-style: none;">
+                <li><i class="fa-solid fa-circle-check mr-2 text-teal-clean"></i> Wireless Smart Faucet</li>
+                <li><i class="fa-solid fa-circle-check mr-2 text-teal-clean"></i> LED Touch Panel Controls</li>
+                <li><i class="fa-solid fa-circle-check mr-2 text-teal-clean"></i> Dual Output Acidic/Alkaline</li>
+                <li><i class="fa-solid fa-circle-check mr-2 text-teal-clean"></i> No wastage of single drop of water.</li>
+                <li><i class="fa-solid fa-circle-check mr-2 text-teal-clean"></i> 7 Plates Standard (9/11 Upgrade Available)</li>
+              </ul>
+            </div>
+            <div class="p-6 pt-0 relative z-10">
+              <div class="flex mt-6">
+                <a href="contact.html" class="btn-primary w-full justify-center text-sm py-3">
+                  <i class="fa-solid fa-paper-plane"></i> Enquire Now
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Undersink Wired -->
+          <div class="product-card flex flex-col justify-between group">
+            <a href="product-undersink-wired.html" class="stretched-link"
+              aria-label="View Mizuion Undersink Wired details"></a>
+            <div
+              class="h-80 md:h-96 overflow-hidden relative bg-white flex items-center justify-center p-6 border-b border-slate-100">
+              <img src="products/undersink Wire Connected.jpg" alt="Mizuion Undersink Wired Connected"
+                class="h-full w-full object-contain transition-transform duration-500 group-hover:scale-110">
+            </div>
+            <div class="p-6 pb-0 flex-grow">
+              <h3 class="font-heading font-bold text-xl mb-1 group-hover:text-teal-clean transition-colors"
+                style="color: #0A2B4E;">Mizuion<sup>™</sup> Undersink (Wired Control Touch Panel)</h3>
+              <p class="text-xs mb-3 font-semibold uppercase tracking-wider text-slate-400">Model: MIUS7.0</p>
+              <div class="flex items-baseline gap-2 mb-3">
+                <span class="text-2xl font-bold" style="color: #00A8A8;">₹2,08,775/-</span>
+                <span class="text-xs text-slate-500 font-medium">Standard 7 Plates</span>
+              </div>
+              <p class="text-xs mb-4 text-slate-500 font-medium">9/11 plate upgrades available | 5 Years Warranty</p>
+              <p class="text-sm mb-4" style="color: #475569;">Space-saving, clean kitchen model with 7 plates standard (9/11 plate upgrades available).</p>
+              <ul class="text-sm space-y-2 mb-6" style="color: #64748B; list-style: none;">
+                <li><i class="fa-solid fa-circle-check mr-2 text-teal-clean"></i> Wired Control Faucet</li>
+                <li><i class="fa-solid fa-circle-check mr-2 text-teal-clean"></i> Responsive LED Indicators</li>
+                <li><i class="fa-solid fa-circle-check mr-2 text-teal-clean"></i> Space-saving under-cabinet</li>
+                <li><i class="fa-solid fa-circle-check mr-2 text-teal-clean"></i> No wastage of single drop of water.</li>
+                <li><i class="fa-solid fa-circle-check mr-2 text-teal-clean"></i> 7 Plates Standard (9/11 Upgrade Available)</li>
+              </ul>
+            </div>
+            <div class="p-6 pt-0 relative z-10">
+              <div class="flex mt-6">
+                <a href="contact.html" class="btn-primary w-full justify-center text-sm py-3">
+                  <i class="fa-solid fa-paper-plane"></i> Enquire Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Commercial Products -->
+      <div>
+        <div class="flex items-center gap-3 mb-8">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center shadow-lg"
+            style="background: linear-gradient(135deg, #00D2FF, #3A7BD5);">
+            <i class="fa-solid fa-building text-white text-xl"></i>
+          </div>
+          <h2 class="font-heading font-bold text-3xl" style="color: #0A2B4E;">Commercial Models</h2>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Commercial Small -->
+          <div class="product-card flex flex-col justify-between group">
+            <a href="product-commercial-small.html" class="stretched-link"
+              aria-label="View Mizuion Commercial Small details"></a>
+            <div
+              class="h-80 md:h-96 overflow-hidden relative bg-white flex items-center justify-center p-6 border-b border-slate-100">
+              <img src="products/COMMERCIAL SMALL.jpg" alt="Mizuion Commercial Small"
+                class="h-full w-full object-contain transition-transform duration-500 group-hover:scale-110">
+            </div>
+            <div class="p-6 pb-0 flex-grow">
+              <h3 class="font-heading font-bold text-xl mb-2 group-hover:text-teal-clean transition-colors"
+                style="color: #0A2B4E;">Mizuion<sup>™</sup> Commercial Small</h3>
+              <p class="text-sm mb-4" style="color: #00A8A8; font-weight: 600;">Office & Clinic | 21 Plates</p>
+              <p class="text-sm mb-4" style="color: #475569;">High-performance, high-capacity model designed for small
+                offices and clinics (200 - 250 LPH).</p>
+              <ul class="text-sm space-y-2 mb-6" style="color: #64748B; list-style: none;">
+                <li><i class="fa-solid fa-circle-check mr-2 text-teal-clean"></i> 21 Platinum-Coated Plates</li>
+                <li><i class="fa-solid fa-circle-check mr-2 text-teal-clean"></i> pH Range: 4.5 - 9.5</li>
+                <li><i class="fa-solid fa-circle-check mr-2 text-teal-clean"></i> 5 Years Company Warranty</li>
+                <li><i class="fa-solid fa-circle-check mr-2 text-teal-clean"></i> No wastage of single drop of water.</li>
+                <li><i class="fa-solid fa-circle-check mr-2 text-teal-clean"></i> Water Flow: 200 - 250 LPH</li>
+              </ul>
+            </div>
+            <div class="p-6 pt-0 relative z-10">
+              <div class="flex mt-6">
+                <a href="contact.html" class="btn-primary w-full justify-center text-sm py-3">
+                  <i class="fa-solid fa-paper-plane"></i> Enquire Now
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Commercial Mid -->
+          <div class="product-card flex flex-col justify-between group">
+            <a href="product-commercial-mid.html" class="stretched-link"
+              aria-label="View Mizuion Commercial Mid details"></a>
+            <div
+              class="h-80 md:h-96 overflow-hidden relative bg-white flex items-center justify-center p-6 border-b border-slate-100">
+              <img src="products/COMMERCIAL MID.jpg" alt="Mizuion Commercial Mid"
+                class="h-full w-full object-contain transition-transform duration-500 group-hover:scale-110">
+            </div>
+            <div class="p-6 pb-0 flex-grow">
+              <h3 class="font-heading font-bold text-xl mb-2 group-hover:text-teal-clean transition-colors"
+                style="color: #0A2B4E;">Mizuion<sup>™</sup> Commercial Mid</h3>
+              <p class="text-sm mb-4" style="color: #00A8A8; font-weight: 600;">Business & Gyms | 35 Plates</p>
+              <p class="text-sm mb-4" style="color: #475569;">Robust, heavy-duty 35-plate ionization system designed for hospitals, clinics, and gyms (400 - 500 LPH).</p>
+              <ul class="text-sm space-y-2 mb-6" style="color: #64748B; list-style: none;">
+                <li><i class="fa-solid fa-circle-check mr-2 text-teal-clean"></i> 35 Platinum-Coated Plates</li>
+                <li><i class="fa-solid fa-circle-check mr-2 text-teal-clean"></i> pH Range: 4.5 - 9.5</li>
+                <li><i class="fa-solid fa-circle-check mr-2 text-teal-clean"></i> 5 Years Company Warranty</li>
+                <li><i class="fa-solid fa-circle-check mr-2 text-teal-clean"></i> No wastage of single drop of water.</li>
+                <li><i class="fa-solid fa-circle-check mr-2 text-teal-clean"></i> Water Flow: 400 - 500 LPH</li>
+              </ul>
+            </div>
+            <div class="p-6 pt-0 relative z-10">
+              <div class="flex mt-6">
+                <a href="contact.html" class="btn-primary w-full justify-center text-sm py-3">
+                  <i class="fa-solid fa-paper-plane"></i> Enquire Now
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Commercial Big -->
+          <div class="product-card flex flex-col justify-between group">
+            <a href="product-commercial-big.html" class="stretched-link"
+              aria-label="View Mizuion Commercial Big details"></a>
+            <div
+              class="h-80 md:h-96 overflow-hidden relative bg-white flex items-center justify-center p-6 border-b border-slate-100">
+              <img src="products/COMMERCIAL BIG.jpg" alt="Mizuion Commercial Big"
+                class="h-full w-full object-contain transition-transform duration-500 group-hover:scale-110">
+            </div>
+            <div class="p-6 pb-0 flex-grow">
+              <h3 class="font-heading font-bold text-xl mb-2 group-hover:text-teal-clean transition-colors"
+                style="color: #0A2B4E;">Mizuion<sup>™</sup> Commercial Big</h3>
+              <p class="text-sm mb-4" style="color: #00A8A8; font-weight: 600;">Hotels & Corporations | 70 Plates</p>
+              <p class="text-sm mb-4" style="color: #475569;">Industrial-grade 70-plate high-volume water ionization system for hotels and corporate office complexes (800 - 1000 LPH).</p>
+              <ul class="text-sm space-y-2 mb-6" style="color: #64748B; list-style: none;">
+                <li><i class="fa-solid fa-circle-check mr-2 text-teal-clean"></i> 70 Platinum-Coated Plates</li>
+                <li><i class="fa-solid fa-circle-check mr-2 text-teal-clean"></i> pH Range: 4.5 - 9.5</li>
+                <li><i class="fa-solid fa-circle-check mr-2 text-teal-clean"></i> 5 Years Company Warranty</li>
+                <li><i class="fa-solid fa-circle-check mr-2 text-teal-clean"></i> No wastage of single drop of water.</li>
+                <li><i class="fa-solid fa-circle-check mr-2 text-teal-clean"></i> Water Flow: 800 - 1000 LPH</li>
+              </ul>
+            </div>
+            <div class="p-6 pt-0 relative z-10">
+              <div class="flex mt-6">
+                <a href="contact.html" class="btn-primary w-full justify-center text-sm py-3">
+                  <i class="fa-solid fa-paper-plane"></i> Enquire Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Waves Container -->
+  <div class="waves-container relative w-full overflow-hidden pointer-events-none"
+    style="height: 80px; background: transparent; margin-bottom: -1px; z-index: 10;">
+    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+      viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"
+      style="position: absolute; bottom: 0; width: 100%; height: 100%;">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s58 18 88 18 58-18 88-18 58 18 88 18v44h-352z" />
+      </defs>
+      <g class="parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(10, 43, 78, 0.7)" />
+        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(0, 168, 168, 0.4)" />
+        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(58, 123, 213, 0.3)" />
+        <use xlink:href="#gentle-wave" x="48" y="7" fill="#0A2B4E" />
+      </g>
+    </svg>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="text-white py-16 relative"
+    style="background-color: #0A2B4E; border-top: 1px solid rgba(255,255,255,0.05);">
+    <!-- Animated Background Elements -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none opacity-20 z-0">
+      <div class="bubble-layer absolute inset-0"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+
+        <!-- Column 1: Brand Profile -->
+        <div class="space-y-6">
+          <div class="flex items-center gap-3">
+            <img src="Logo.png" alt="Mizuion Logo"
+              class="w-12 h-12 object-contain shadow-lg border border-teal-clean/30 transition-transform duration-300 hover:rotate-12">
+            <div>
+              <h3 class="font-heading font-bold text-2xl text-white tracking-wide">Mizuion<sup
+                  style="font-size: 0.5em; color: #00D2FF;">™</sup></h3>
+              <p class="text-xs text-light-aqua/70 font-body">by Jagdamba Associates</p>
+            </div>
+          </div>
+          <p class="text-sm text-slate-300 leading-relaxed font-body">
+            A premium preventive healthcare initiative bringing state-of-the-art Japanese water ionization technology to
+            homes and businesses across India since 2021.
+          </p>
+          <!-- Trust Badges & Certifications -->
+          <div class="space-y-2">
+            <p class="text-xs font-semibold text-teal-clean tracking-wider uppercase">Quality Standards</p>
+            <div class="flex gap-2 items-center flex-wrap">
+              <img src="Certifications/newCertifications/ISO 9001 2015.png" alt="ISO 9001"
+                class="h-8 transition-transform duration-300 hover:scale-110" title="ISO 9001:2015">
+              <img src="Certifications/newCertifications/CE.png" alt="CE"
+                class="h-8 transition-transform duration-300 hover:scale-110" title="CE Marking">
+              <img src="Certifications/newCertifications/ISO 13485.png" alt="ISO 13485"
+                class="h-8 transition-transform duration-300 hover:scale-110" title="ISO 13485 (Medical Devices)">
+              <img src="Certifications/newCertifications/GMP CERTIFIED.png" alt="GMP"
+                class="h-8 transition-transform duration-300 hover:scale-110" title="GMP Certified">
+              <img src="Certifications/newCertifications/ISO 14001.png" alt="ISO 14001"
+                class="h-8 transition-transform duration-300 hover:scale-110" title="ISO 14001">
+              <img src="Certifications/newCertifications/rohs mark packaging.png" alt="RoHS"
+                class="h-8 transition-transform duration-300 hover:scale-110" title="RoHS Compliant">
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Navigation -->
+        <div class="space-y-6">
+          <h4 class="font-heading font-bold text-lg text-white border-b-2 border-teal-clean/30 pb-2 inline-block">Quick
+            Links</h4>
+          <ul class="space-y-3 text-sm font-body list-none p-0 m-0">
+            <li>
+              <a href="index.html"
+                class="footer-link text-slate-300 hover:text-h-cyan flex items-center gap-2 transition-all duration-300"
+                style="text-decoration: none;">
+                <i class="fa-solid fa-chevron-right text-[10px] text-teal-clean"></i> Home
+              </a>
+            </li>
+            <li>
+              <a href="products.html"
+                class="footer-link text-slate-300 hover:text-h-cyan flex items-center gap-2 transition-all duration-300"
+                style="text-decoration: none;">
+                <i class="fa-solid fa-chevron-right text-[10px] text-teal-clean"></i> Products Range
+              </a>
+            </li>
+            <li>
+              <a href="about.html"
+                class="footer-link text-slate-300 hover:text-h-cyan flex items-center gap-2 transition-all duration-300"
+                style="text-decoration: none;">
+                <i class="fa-solid fa-chevron-right text-[10px] text-teal-clean"></i> About Us
+              </a>
+            </li>
+            <li>
+              <a href="mission.html"
+                class="footer-link text-slate-300 hover:text-h-cyan flex items-center gap-2 transition-all duration-300"
+                style="text-decoration: none;">
+                <i class="fa-solid fa-chevron-right text-[10px] text-teal-clean"></i> Our Mission
+              </a>
+            </li>
+            <li>
+              <a href="contact.html"
+                class="footer-link text-slate-300 hover:text-h-cyan flex items-center gap-2 transition-all duration-300"
+                style="text-decoration: none;">
+                <i class="fa-solid fa-chevron-right text-[10px] text-teal-clean"></i> Contact Us
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Product Categories -->
+        <div class="space-y-6">
+          <h4 class="font-heading font-bold text-lg text-white border-b-2 border-teal-clean/30 pb-2 inline-block">Our
+            Products</h4>
+          <ul class="space-y-3 text-sm font-body list-none p-0 m-0">
+            <li>
+              <a href="products.html"
+                class="footer-link text-slate-300 hover:text-h-cyan flex items-center gap-2 transition-all duration-300"
+                style="text-decoration: none;">
+                <i class="fa-solid fa-tint text-teal-clean text-xs"></i> Wall mounted and countertop models
+              </a>
+            </li>
+            <li>
+              <a href="products.html"
+                class="footer-link text-slate-300 hover:text-h-cyan flex items-center gap-2 transition-all duration-300"
+                style="text-decoration: none;">
+                <i class="fa-solid fa-filter text-teal-clean text-xs"></i> Undersink Models
+              </a>
+            </li>
+            <li>
+              <a href="products.html"
+                class="footer-link text-slate-300 hover:text-h-cyan flex items-center gap-2 transition-all duration-300"
+                style="text-decoration: none;">
+                <i class="fa-solid fa-building text-teal-clean text-xs"></i> Commercial Systems
+              </a>
+            </li>
+            <li>
+              <a href="product-mip73.html"
+                class="footer-link text-slate-300 hover:text-h-cyan flex items-center gap-2 transition-all duration-300"
+                style="text-decoration: none;">
+                <i class="fa-solid fa-star text-yellow-400 text-xs"></i> Flagship Model (MIP 7.3)
+              </a>
+            </li>
+            <li>
+              <a href="product-undersink-bluetooth.html"
+                class="footer-link text-slate-300 hover:text-h-cyan flex items-center gap-2 transition-all duration-300"
+                style="text-decoration: none;">
+                <i class="fa-solid fa-satellite-dish text-teal-clean text-xs"></i> Wireless Smart Touch Panel Model
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact & Socials -->
+        <div class="space-y-6">
+          <h4 class="font-heading font-bold text-lg text-white border-b-2 border-teal-clean/30 pb-2 inline-block">
+            Support & Connect</h4>
+          <ul class="space-y-3.5 text-sm font-body list-none p-0 m-0">
+            <li class="flex items-start gap-3">
+              <i class="fa-solid fa-envelope text-h-cyan mt-1 text-base"></i>
+              <div>
+                <p class="text-xs text-slate-400 font-semibold uppercase">Email Support</p>
+                <a href="mailto:sales@mizuion.com" class="text-slate-200 hover:text-h-cyan transition-colors"
+                  style="text-decoration: none; display: block; margin-top: 2px;">sales@mizuion.com</a>
+                <a href="mailto:account@mizuion.com" class="text-slate-200 hover:text-h-cyan transition-colors"
+                  style="text-decoration: none; display: block;">account@mizuion.com</a>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <i class="fa-solid fa-phone text-h-cyan mt-1 text-base"></i>
+              <div>
+                <p class="text-xs text-slate-400 font-semibold uppercase">Call Hotline</p>
+                <div class="space-y-1 mt-0.5">
+                  <a href="tel:9970007580" class="text-slate-200 hover:text-h-cyan transition-colors block"
+                    style="text-decoration: none;">9970007580</a>
+                  <a href="tel:8308206447" class="text-slate-200 hover:text-h-cyan transition-colors block"
+                    style="text-decoration: none;">8308206447</a>
+                  <a href="tel:9890926033" class="text-slate-200 hover:text-h-cyan transition-colors block"
+                    style="text-decoration: none;">9890926033</a>
+                </div>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <i class="fa-brands fa-whatsapp text-green-400 text-lg mt-0.5"></i>
+              <div>
+                <p class="text-xs text-slate-400 font-semibold uppercase">WhatsApp Chat</p>
+                <a href="https://wa.me/918010886620" target="_blank"
+                  class="text-slate-200 hover:text-green-400 transition-colors font-bold flex items-center gap-1.5 mt-0.5"
+                  style="text-decoration: none;">
+                  8010886620
+                  <span class="inline-block w-2.5 h-2.5 rounded-full bg-green-500 animate-ping"></span>
+                </a>
+              </div>
+            </li>
+          </ul>
+
+          <!-- Social Profiles with unique hover styles -->
+          <div class="pt-2">
+            <p class="text-xs font-semibold text-teal-clean uppercase tracking-wider mb-3">Follow our Handles</p>
+            <div class="flex gap-3">
+              <a href="https://www.facebook.com/mizuion.alkaline.water.ionizer" target="_blank" aria-label="Facebook"
+                class="social-btn footer-social-fb w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300"
+                style="text-decoration: none;">
+                <i class="fa-brands fa-facebook-f text-base"></i>
+              </a>
+              <a href="https://www.instagram.com/mizuion_alkaline_water_ionizer" target="_blank" aria-label="Instagram"
+                class="social-btn footer-social-ig w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300"
+                style="text-decoration: none;">
+                <i class="fa-brands fa-instagram text-base"></i>
+              </a>
+              <a href="https://www.youtube.com/@Mizuionalkalinewaterionizer" target="_blank" aria-label="YouTube"
+                class="social-btn footer-social-yt w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300"
+                style="text-decoration: none;">
+                <i class="fa-brands fa-youtube text-base"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Divider Line -->
+      <div
+        class="border-t pt-8 mt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm font-body text-slate-400"
+        style="border-color: rgba(255,255,255,0.08);">
+        <div>
+          <p>© 2026 Mizuion™ - A preventive healthcare initiative. All rights reserved.</p>
+          <p class="text-xs text-slate-500 mt-1">Managed & Promoted by Jagdamba Associates. Established 2021. | Developed by <a href="https://digibrandz.in/" target="_blank" class="hover:text-h-cyan transition-colors" style="text-decoration: none;">Digibrandz</a></p>
+        </div>
+        <div class="flex items-center gap-2 select-none">
+          <span class="text-slate-400">Har Ghar Mizuion</span>
+          <span class="inline-block animate-bounce text-base">💧</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+  </div>
+  </div>
+  </footer>
+
+  <!-- FLOATING SOCIAL SIDEBAR -->
+  <div id="floatingSocial"
+    style="position: fixed; top: 50%; right: 1rem; transform: translateY(-50%); z-index: 998; display: flex; flex-direction: column; gap: 0.75rem;">
+    <!-- Call Button 1 -->
+    <a href="tel:9970007580" aria-label="Call 9970007580" title="Call: 9970007580"
+      style="width: 3rem; height: 3rem; border-radius: 50%; background: linear-gradient(135deg, #00D2FF, #3A7BD5); color: white; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,210,255,0.4); cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease; text-decoration: none;"
+      onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+      <i class="fa-solid fa-phone text-sm"></i>
+    </a>
+
+    <!-- Call Button 2 -->
+    <a href="tel:8308206447" aria-label="Call 8308206447" title="Call: 8308206447"
+      style="width: 3rem; height: 3rem; border-radius: 50%; background: linear-gradient(135deg, #00D2FF, #3A7BD5); color: white; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,210,255,0.4); cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease; text-decoration: none;"
+      onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+      <i class="fa-solid fa-phone text-sm"></i>
+    </a>
+
+    <!-- Call Button 3 -->
+    <a href="tel:9890926033" aria-label="Call 9890926033" title="Call: 9890926033"
+      style="width: 3rem; height: 3rem; border-radius: 50%; background: linear-gradient(135deg, #00D2FF, #3A7BD5); color: white; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,210,255,0.4); cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease; text-decoration: none;"
+      onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+      <i class="fa-solid fa-phone text-sm"></i>
+    </a>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/918010886620" target="_blank" aria-label="WhatsApp" title="WhatsApp: 8010886620"
+      style="width: 3rem; height: 3rem; border-radius: 50%; background: #25D366; color: white; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(37,211,102,0.4); cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease; text-decoration: none;"
+      onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+      <i class="fa-brands fa-whatsapp text-lg"></i>
+    </a>
+
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/mizuion_alkaline_water_ionizer" target="_blank" aria-label="Instagram"
+      title="Mizuion_Alkaline_Water_Ionizer"
+      style="width: 3rem; height: 3rem; border-radius: 50%; background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C); color: white; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(225,48,108,0.4); cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease; text-decoration: none;"
+      onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+      <i class="fa-brands fa-instagram text-lg"></i>
+    </a>
+
+    <!-- Facebook -->
+    <a href="https://www.facebook.com/mizuion.alkaline.water.ionizer" target="_blank" aria-label="Facebook"
+      title="Mizuion alkaline water ionizer"
+      style="width: 3rem; height: 3rem; border-radius: 50%; background: #1877F2; color: white; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(24,119,242,0.4); cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease; text-decoration: none;"
+      onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+      <i class="fa-brands fa-facebook-f text-lg"></i>
+    </a>
+
+    <!-- YouTube -->
+    <a href="https://www.youtube.com/@Mizuionalkalinewaterionizer" target="_blank" aria-label="YouTube"
+      title="Mizuion YouTube Channel"
+      style="width: 3rem; height: 3rem; border-radius: 50%; background: #FF0000; color: white; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(255,0,0,0.4); cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease; text-decoration: none;"
+      onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+      <i class="fa-brands fa-youtube text-lg"></i>
+    </a>
+
+    <!-- Email -->
+    <a href="mailto:sales@mizuion.com" aria-label="Email Sales" title="sales@mizuion.com"
+      style="width: 3rem; height: 3rem; border-radius: 50%; background: #EA4335; color: white; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(234,67,53,0.4); cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease; text-decoration: none;"
+      onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+      <i class="fa-solid fa-envelope text-sm"></i>
+    </a>
+  </div>
+
+  <style>
+    /* Floating Social Sidebar */
+    #floatingSocial {
+      animation: slideInRight 0.5s ease-out;
+      transition: transform 0.3s ease;
+    }
+
+    @keyframes slideInRight {
+      from {
+        transform: translate(100%, -50%);
+        opacity: 0;
+      }
+
+      to {
+        transform: translate(0, -50%);
+        opacity: 1;
+      }
+    }
+
+    #floatingSocial a:hover {
+      transform: scale(1.1) !important;
+    }
+
+    @media (max-width: 768px) {
+      #floatingSocial {
+        top: auto !important;
+        bottom: 1rem !important;
+        right: 0.5rem !important;
+        left: 0.5rem !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        transform: none !important;
+      }
+    }
+
+    /* Animated Wave & Footer Styles */
+    .waves-container {
+      height: 80px;
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      pointer-events: none;
+      background: transparent;
+      margin-bottom: -1px;
+      z-index: 10;
+    }
+
+    .waves {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .parallax>use {
+      animation: move-forever-footer 20s cubic-bezier(.55, .5, .45, .5) infinite;
+    }
+
+    .parallax>use:nth-child(1) {
+      animation-delay: -2s;
+      animation-duration: 7s;
+    }
+
+    .parallax>use:nth-child(2) {
+      animation-delay: -3s;
+      animation-duration: 10s;
+    }
+
+    .parallax>use:nth-child(3) {
+      animation-delay: -4s;
+      animation-duration: 13s;
+    }
+
+    .parallax>use:nth-child(4) {
+      animation-delay: -5s;
+      animation-duration: 18s;
+    }
+
+    @keyframes move-forever-footer {
+      0% {
+        transform: translate3d(-90px, 0, 0);
+      }
+
+      100% {
+        transform: translate3d(85px, 0, 0);
+      }
+    }
+
+    .footer-link {
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .footer-link:hover {
+      transform: translateX(6px);
+      color: #00D2FF !important;
+    }
+
+    .social-btn {
+      background: rgba(255, 255, 255, 0.06);
+      color: white;
+      transition: all 0.3s ease;
+    }
+
+    .social-btn:hover {
+      color: white !important;
+      transform: translateY(-4px);
+    }
+
+    .footer-social-fb:hover {
+      background-color: #1877F2 !important;
+      box-shadow: 0 4px 15px rgba(24, 119, 242, 0.4) !important;
+    }
+
+    .footer-social-ig:hover {
+      background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C) !important;
+      box-shadow: 0 4px 15px rgba(225, 48, 108, 0.4) !important;
+    }
+
+    .footer-social-yt:hover {
+      background-color: #FF0000 !important;
+      box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4) !important;
+    }
+
+    .footer-bubble {
+      position: absolute;
+      background: rgba(0, 210, 255, 0.3);
+      border-radius: 50%;
+      animation: floatUpBubble infinite linear;
+      pointer-events: none;
+    }
+
+    @keyframes floatUpBubble {
+      0% {
+        transform: translateY(0) scale(1) translateX(0);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 0.3;
+      }
+
+      90% {
+        opacity: 0.3;
+      }
+
+      100% {
+        transform: translateY(-300px) scale(0) translateX(-15px);
+        opacity: 0;
+      }
+    }
+  </style>
+
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('open');
+      });
+    }
+
+    // Active page highlight
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const navLinks = document.querySelectorAll('#navbar .nav-link');
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+        link.style.color = '#00D2FF';
+      }
+    });
+
+    // Footer Bubble Generator
+    (function () {
+      const bubbleLayer = document.querySelector('.bubble-layer');
+      if (bubbleLayer) {
+        for (let i = 0; i < 15; i++) {
+          const bubble = document.createElement('div');
+          bubble.className = 'footer-bubble';
+          const size = Math.random() * 8 + 4;
+          bubble.style.width = `${size}px`;
+          bubble.style.height = `${size}px`;
+          bubble.style.left = `${Math.random() * 100}%`;
+          bubble.style.bottom = `-20px`;
+          bubble.style.animationDuration = `${Math.random() * 10 + 6}s`;
+          bubble.style.animationDelay = `${Math.random() * 8}s`;
+          bubbleLayer.appendChild(bubble);
+        }
+      }
+    })();
+  </script>
+
+</body>
+
+</html>

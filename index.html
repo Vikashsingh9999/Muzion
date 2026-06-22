@@ -1,0 +1,1964 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mizuion - Hydrogen Rich Alkaline Water Ionizer</title>
+  <meta name="description"
+    content="Mizuion by Jagdamba Associates - Hydrogen rich alkaline water ionizer with Japanese technology for a healthier India.">
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%92%A7%3C/text%3E%3C/svg%3E">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'tech-blue': '#0A2B4E',
+            'teal-clean': '#00A8A8',
+            'soft-white': '#F8FAFC',
+            'light-aqua': '#E0F2FE',
+            'h-cyan': '#00D2FF',
+            'h-blue': '#3A7BD5',
+          },
+          fontFamily: {
+            heading: ['Poppins', 'sans-serif'],
+            body: ['Inter', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1E293B;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    #navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background-color: #0A2B4E !important;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .nav-link {
+      position: relative;
+      padding-bottom: 4px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #00D2FF, #3A7BD5);
+      transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    #mobile-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease-in-out;
+      background-color: rgba(10, 43, 78, 0.95);
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+
+    #mobile-menu.open {
+      max-height: 400px;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .h-gradient {
+      background: linear-gradient(135deg, #00D2FF 0%, #3A7BD5 100%);
+    }
+
+    .h-gradient-text {
+      background: linear-gradient(90deg, #00D2FF, #3A7BD5);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #00D2FF 0%, #3A7BD5 100%);
+      color: white;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      padding: 0.875rem 1.75rem;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(0, 210, 255, 0.35);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: white;
+      font-weight: 600;
+      border: 2px solid rgba(255, 255, 255, 0.8);
+      cursor: pointer;
+      padding: 0.875rem 1.75rem;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .btn-secondary:hover {
+      transform: scale(1.05);
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .glass {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 16px;
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .delay-1 {
+      transition-delay: 0.1s;
+    }
+
+    .delay-2 {
+      transition-delay: 0.2s;
+    }
+
+    .delay-3 {
+      transition-delay: 0.3s;
+    }
+
+    .delay-4 {
+      transition-delay: 0.4s;
+    }
+
+    .counter {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 800;
+      font-size: 3rem;
+      background: linear-gradient(90deg, #00D2FF, #3A7BD5);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .science-card {
+      background: white;
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(0, 168, 168, 0.1);
+    }
+
+    .science-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      border: 2px solid transparent;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    .glass-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      border-color: #00A8A8;
+    }
+
+    .flip-card {
+      perspective: 1000px;
+      height: 320px;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 20px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .flip-card-front {
+      background: white;
+      border: 1px solid #E0F2FE;
+    }
+
+    .flip-card-back {
+      background: #0A2B4E;
+      color: white;
+      transform: rotateY(180deg);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 2.5rem;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, #00D2FF, #3A7BD5);
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 0.875rem 1.25rem;
+      border: 2px solid #E0F2FE;
+      border-radius: 12px;
+      font-family: 'Inter', sans-serif;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: #00A8A8;
+      box-shadow: 0 0 0 3px rgba(0, 168, 168, 0.1);
+    }
+
+    #backTop {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      width: 3rem;
+      height: 3rem;
+      background: linear-gradient(135deg, #00D2FF, #3A7BD5);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.3s, transform 0.3s;
+      box-shadow: 0 4px 15px rgba(0, 210, 255, 0.4);
+      z-index: 999;
+    }
+
+    #backTop.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    #modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(10, 43, 78, 0.7);
+      backdrop-filter: blur(4px);
+      z-index: 1001;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #modal.active {
+      display: flex;
+    }
+
+    .animated-bg {
+      background: linear-gradient(-45deg, #0A2B4E, #00A8A8, #3A7BD5, #00D2FF);
+      background-size: 400% 400%;
+      animation: gradient-shift 15s ease infinite;
+    }
+
+    @keyframes gradient-shift {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    @keyframes floatY {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+
+    .float-y {
+      animation: floatY 3s ease-in-out infinite;
+    }
+
+    .bubbles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .bubble {
+      position: absolute;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.9), rgba(0, 168, 168, 0.4));
+      animation: floatUp 10s infinite ease-in-out;
+      opacity: 0.7;
+      box-shadow: 0 0 14px rgba(0, 210, 255, 0.4);
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100vh) translateX(0) scale(0.8);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 0.5;
+      }
+
+      90% {
+        opacity: 0.5;
+      }
+
+      100% {
+        transform: translateY(-100vh) translateX(30px) scale(1.1);
+        opacity: 0;
+      }
+    }
+
+    .pulse-badge {
+      animation: pulse-border 2s infinite;
+    }
+
+    @keyframes pulse-border {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(0, 210, 255, 0.5);
+      }
+
+      50% {
+        box-shadow: 0 0 0 12px rgba(0, 210, 255, 0);
+      }
+    }
+
+    /* ── Hero enhanced background ── */
+    #home {
+      background: radial-gradient(ellipse at 15% 15%, #c8effe 0%, #e8f7ff 35%, #f0fbff 65%, #daf2ff 100%) !important;
+      position: relative;
+    }
+
+    .hero-mesh {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 80% 20%, rgba(0, 210, 255, 0.18) 0%, transparent 50%),
+        radial-gradient(circle at 10% 80%, rgba(58, 123, 213, 0.14) 0%, transparent 45%),
+        radial-gradient(circle at 55% 55%, rgba(0, 168, 168, 0.10) 0%, transparent 40%);
+      animation: meshPulse 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes meshPulse {
+      0% {
+        opacity: 0.7;
+        transform: scale(1);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1.05);
+      }
+    }
+
+    /* ── Hero ring decorations ── */
+    .hero-ring {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      border: 1.5px solid rgba(0, 210, 255, 0.2);
+      animation: ringExpand 6s ease-in-out infinite;
+    }
+
+    .hero-ring:nth-child(1) {
+      width: 300px;
+      height: 300px;
+      top: -80px;
+      right: -60px;
+      animation-delay: 0s;
+    }
+
+    .hero-ring:nth-child(2) {
+      width: 500px;
+      height: 500px;
+      top: -180px;
+      right: -160px;
+      animation-delay: 1.5s;
+      border-color: rgba(58, 123, 213, 0.12);
+    }
+
+    .hero-ring:nth-child(3) {
+      width: 200px;
+      height: 200px;
+      bottom: 60px;
+      left: -50px;
+      animation-delay: 3s;
+      border-color: rgba(0, 168, 168, 0.15);
+    }
+
+    @keyframes ringExpand {
+
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 0.6;
+      }
+
+      50% {
+        transform: scale(1.08);
+        opacity: 1;
+      }
+    }
+
+    /* ── Hero text entry animations ── */
+    @keyframes heroSlideUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-anim {
+      opacity: 0;
+      animation: heroSlideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    .hero-anim-1 {
+      animation-delay: 0.1s;
+    }
+
+    .hero-anim-2 {
+      animation-delay: 0.35s;
+    }
+
+    .hero-anim-3 {
+      animation-delay: 0.55s;
+    }
+
+    .hero-anim-4 {
+      animation-delay: 0.75s;
+    }
+
+    .hero-anim-5 {
+      animation-delay: 0.95s;
+    }
+
+    .hero-anim-6 {
+      animation-delay: 1.1s;
+    }
+
+    /* ── Typewriter ── */
+    #typewriter-wrap {
+      display: inline-block;
+      position: relative;
+      min-height: 1.15em;
+    }
+
+    #typewriter-text {
+      background: linear-gradient(90deg, #00D2FF, #3A7BD5);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    #typewriter-cursor {
+      display: inline-block;
+      width: 3px;
+      background: linear-gradient(180deg, #00D2FF, #3A7BD5);
+      border-radius: 2px;
+      margin-left: 3px;
+      vertical-align: text-bottom;
+      animation: blink 0.75s step-end infinite;
+      height: 0.85em;
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .counter {
+        font-size: 2.5rem;
+      }
+
+      .flip-card {
+        height: 280px;
+      }
+
+      .hero-ring {
+        display: none;
+      }
+    }
+
+    /* Floating Social Sidebar */
+    #floatingSocial {
+      animation: slideInRight 0.5s ease-out;
+      transition: transform 0.3s ease;
+    }
+
+    @keyframes slideInRight {
+      from {
+        transform: translate(100%, -50%);
+        opacity: 0;
+      }
+
+      to {
+        transform: translate(0, -50%);
+        opacity: 1;
+      }
+    }
+
+    #floatingSocial a:hover {
+      transform: scale(1.1) !important;
+    }
+
+    @media (max-width: 768px) {
+      #floatingSocial {
+        top: auto !important;
+        bottom: 1rem !important;
+        right: 0.5rem !important;
+        left: 0.5rem !important;
+        flex-direction: row !important;
+        justify-content: center !important;
+        transform: none !important;
+      }
+    }
+
+    /* Animated Wave & Footer Styles */
+    .waves-container {
+      height: 80px;
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      pointer-events: none;
+      background: transparent;
+      margin-bottom: -1px;
+      z-index: 10;
+    }
+
+    .waves {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .parallax>use {
+      animation: move-forever-footer 20s cubic-bezier(.55, .5, .45, .5) infinite;
+    }
+
+    .parallax>use:nth-child(1) {
+      animation-delay: -2s;
+      animation-duration: 7s;
+    }
+
+    .parallax>use:nth-child(2) {
+      animation-delay: -3s;
+      animation-duration: 10s;
+    }
+
+    .parallax>use:nth-child(3) {
+      animation-delay: -4s;
+      animation-duration: 13s;
+    }
+
+    .parallax>use:nth-child(4) {
+      animation-delay: -5s;
+      animation-duration: 18s;
+    }
+
+    @keyframes move-forever-footer {
+      0% {
+        transform: translate3d(-90px, 0, 0);
+      }
+
+      100% {
+        transform: translate3d(85px, 0, 0);
+      }
+    }
+
+    .footer-link {
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .footer-link:hover {
+      transform: translateX(6px);
+      color: #00D2FF !important;
+    }
+
+    .social-btn {
+      background: rgba(255, 255, 255, 0.06);
+      color: white;
+      transition: all 0.3s ease;
+    }
+
+    .social-btn:hover {
+      color: white !important;
+      transform: translateY(-4px);
+    }
+
+    .footer-social-fb:hover {
+      background-color: #1877F2 !important;
+      box-shadow: 0 4px 15px rgba(24, 119, 242, 0.4) !important;
+    }
+
+    .footer-social-ig:hover {
+      background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C) !important;
+      box-shadow: 0 4px 15px rgba(225, 48, 108, 0.4) !important;
+    }
+
+    .footer-social-yt:hover {
+      background-color: #FF0000 !important;
+      box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4) !important;
+    }
+
+    .footer-bubble {
+      position: absolute;
+      background: rgba(0, 210, 255, 0.3);
+      border-radius: 50%;
+      animation: floatUpBubble infinite linear;
+      pointer-events: none;
+    }
+
+    @keyframes floatUpBubble {
+      0% {
+        transform: translateY(0) scale(1) translateX(0);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 0.3;
+      }
+
+      90% {
+        opacity: 0.3;
+      }
+
+      100% {
+        transform: translateY(-300px) scale(0) translateX(-15px);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between py-4">
+      <a href="index.html" class="flex items-center gap-3">
+        <img src="Logo.png" alt="Mizuion Logo" class="w-10 h-10 object-contain shadow-lg">
+        <div class="leading-tight">
+          <div class="font-heading font-bold text-xl text-white">Mizuion<sup style="font-size: 0.5em;">™</sup></div>
+          <div class="text-[11px] uppercase tracking-wider text-light-aqua/90">by Jagdamba Associates</div>
+        </div>
+      </a>
+      <ul class="hidden md:flex items-center gap-8 text-white font-medium" style="list-style: none;">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="products.html" class="nav-link">Products</a></li>
+        <li><a href="about.html" class="nav-link">About Us</a></li>
+        <li><a href="mission.html" class="nav-link">Mission</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="hidden md:flex items-center gap-4">
+        <a href="Mizuion-Product%20Brochure%20.pdf" download class="hidden lg:inline-flex items-center gap-2 bg-transparent text-white font-semibold border border-white/60 py-2.5 px-5 rounded-full hover:bg-white hover:text-tech-blue transition-all duration-300 text-sm">
+          <i class="fa-solid fa-file-pdf"></i> Download Brochure
+        </a>
+        <a href="tel:9970007580" class="btn-primary">
+          <i class="fa-solid fa-phone-volume mr-2"></i> Call Now
+        </a>
+      </div>
+      <button id="menu-toggle" aria-label="Toggle menu"
+        class="md:hidden text-white bg-transparent border-none text-2xl cursor-pointer">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+    <div id="mobile-menu">
+      <ul class="px-6 py-4 space-y-3 text-white font-medium" style="list-style: none;">
+        <li><a href="index.html" class="block py-2 text-white" style="text-decoration: none;">Home</a></li>
+        <li><a href="products.html" class="block py-2 text-white" style="text-decoration: none;">Products</a></li>
+        <li><a href="about.html" class="block py-2 text-white" style="text-decoration: none;">About Us</a></li>
+        <li><a href="mission.html" class="block py-2 text-white" style="text-decoration: none;">Mission</a></li>
+        <li><a href="contact.html" class="block py-2 text-white" style="text-decoration: none;">Contact</a></li>
+        <li><a href="Mizuion-Product%20Brochure%20.pdf" download class="block py-2 mt-2 text-center text-white font-semibold border border-white/40 rounded-full hover:bg-white/10 transition-all" style="text-decoration: none;"><i class="fa-solid fa-file-pdf mr-2"></i>Download Brochure</a></li>
+        <li><a href="tel:9970007580" class="block py-2 mt-2 text-center btn-primary rounded-full"
+            style="text-decoration: none;">Call Now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section id="home" class="relative min-h-screen flex items-center pt-28 pb-20">
+    <!-- Decorative rings -->
+    <div class="hero-ring"></div>
+    <div class="hero-ring"></div>
+    <div class="hero-ring"></div>
+    <!-- Animated mesh overlay -->
+    <div class="hero-mesh"></div>
+    <!-- Floating bubbles -->
+    <div class="bubbles" id="hero-bubbles"></div>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10" style="text-align: center;">
+
+      <!-- Badge -->
+      <div class="hero-anim hero-anim-1 inline-flex items-center gap-2 px-5 py-2 rounded-full glass pulse-badge mb-6"
+        style="color: #0A2B4E; font-size: 1.05rem; background: rgba(0,210,255,0.08); border: 1px solid rgba(0,210,255,0.3); backdrop-filter: blur(10px);">
+        <i class="fa-solid fa-atom h-gradient-text"></i>
+        Made with Japanese Technology
+      </div>
+
+      <!-- Main heading -->
+      <h1 class="hero-anim hero-anim-2 font-heading font-extrabold text-5xl sm:text-6xl lg:text-7xl leading-tight mb-4"
+        style="color: #0A2B4E; text-align: center;">
+        Drink Beyond Hydration
+      </h1>
+
+      <!-- Typewriter line -->
+      <div class="hero-anim hero-anim-3 font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl leading-tight mb-6"
+        style="text-align: center; min-height: 1.3em;">
+        <span id="typewriter-wrap">
+          <span id="typewriter-text"></span><span id="typewriter-cursor"></span>
+        </span>
+      </div>
+
+      <p class="hero-anim hero-anim-4 text-xl mb-8"
+        style="color: #475569; max-width: 36rem; text-align: center; margin: 0 auto 2rem;">
+        Mizuion &mdash; Japanese technology, High pH, &minus;ORP, antioxidant protection.
+        Trusted by <span style="font-weight: 600; color: #0A2B4E;">Jagdamba Associates since 2021</span>.
+      </p>
+
+      <div class="hero-anim hero-anim-5 flex flex-wrap gap-4 mb-10 justify-center">
+        <a href="#technology" class="btn-primary text-lg px-8 py-4"
+          style="box-shadow: 0 8px 30px rgba(0,210,255,0.35);">
+          Explore Mizuion <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <a href="tel:9970007580" class="btn-secondary text-lg px-8 py-4"
+          style="border-color: rgba(0,168,168,0.6); color: #0A2B4E;">
+          <i class="fa-solid fa-headset"></i> Talk to Expert
+        </a>
+      </div>
+
+      <div class="hero-anim hero-anim-5 flex flex-wrap items-center gap-6 text-sm justify-center mb-6"
+        style="color: #475569;">
+        <div class="flex items-center gap-2"><i class="fa-solid fa-shield-halved" style="color: #00A8A8;"></i> ISO / CE
+          Certified</div>
+        <div class="flex items-center gap-2"><i class="fa-solid fa-leaf" style="color: #00A8A8;"></i> Eco-Conscious
+        </div>
+        <div class="flex items-center gap-2"><i class="fa-solid fa-heart" style="color: #00A8A8;"></i> Preventive
+          Healthcare</div>
+      </div>
+
+      <!-- Certification Badges -->
+      <div class="hero-anim hero-anim-6 flex flex-wrap gap-4 mt-2 justify-center">
+        <img src="Certifications/newCertifications/ISO 9001 2015.png" alt="ISO 9001:2015" class="h-12"
+          title="ISO 9001:2015" style="filter: drop-shadow(0 2px 6px rgba(0,0,0,0.10));">
+        <img src="Certifications/newCertifications/CE.png" alt="CE Marking" class="h-12" title="CE Marking"
+          style="filter: drop-shadow(0 2px 6px rgba(0,0,0,0.10));">
+        <img src="Certifications/newCertifications/ISO 13485.png" alt="ISO 13485" class="h-12" title="ISO 13485"
+          style="filter: drop-shadow(0 2px 6px rgba(0,0,0,0.10));">
+        <img src="Certifications/newCertifications/GMP CERTIFIED.png" alt="GMP" class="h-12"
+          title="Good Manufacturing Practice" style="filter: drop-shadow(0 2px 6px rgba(0,0,0,0.10));">
+        <img src="Certifications/newCertifications/ISO 14001.png" alt="ISO 14001" class="h-12" title="ISO 14001"
+          style="filter: drop-shadow(0 2px 6px rgba(0,0,0,0.10));">
+        <img src="Certifications/newCertifications/rohs mark packaging.png" alt="RoHS" class="h-12"
+          title="RoHS Compliant" style="filter: drop-shadow(0 2px 6px rgba(0,0,0,0.10));">
+        <img src="Certifications/newCertifications/makeindia.png" alt="Make in India" class="h-12" title="Make in India"
+          style="filter: drop-shadow(0 2px 6px rgba(0,0,0,0.10));">
+      </div>
+    </div>
+
+    <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+      <svg viewBox="0 0 1200 120" preserveAspectRatio="none" style="display: block; width: 100%; height: 60px;">
+        <path
+          d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+          fill="#F8FAFC"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- THE SCIENCE OF WELLNESS -->
+  <section id="technology" class="py-20" style="background-color: #F8FAFC;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="fade-up font-heading font-extrabold text-3xl sm:text-4xl text-center mb-4" style="color: #0A2B4E;">The
+        Science of Wellness</h2>
+      <p class="fade-up delay-1 text-center max-w-2xl mx-auto mb-12" style="color: #475569;">
+        "Combining medical insight with advanced Japanese technology - hydrogen-rich alkaline water ionizers for
+        antioxidant protection."
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="science-card fade-up delay-1">
+          <div class="w-16 h-16 rounded-2xl h-gradient flex items-center justify-center mx-auto mb-6">
+            <i class="fa-solid fa-tint text-white text-2xl"></i>
+          </div>
+          <h3 class="font-heading font-bold text-xl mb-2" style="color: #0A2B4E;">High pH</h3>
+          <p style="color: #475569; margin-bottom: 1rem;">7.5 to 11.5 pH for acid balance</p>
+          <div class="counter" data-target="11.5" data-decimals="1">0</div>
+          <p class="text-sm mt-2" style="color: #475569;">Optimal pH range</p>
+        </div>
+
+        <div class="science-card fade-up delay-2">
+          <div class="w-16 h-16 rounded-2xl h-gradient flex items-center justify-center mx-auto mb-6">
+            <i class="fa-solid fa-atom text-white text-2xl"></i>
+          </div>
+          <h3 class="font-heading font-bold text-xl mb-2" style="color: #0A2B4E;">Rich Hydrogen</h3>
+          <p style="color: #475569; margin-bottom: 1rem;">Up to 1600 ppb Antioxidant power</p>
+          <div class="counter" data-target="1600">0</div>
+          <p class="text-sm mt-2" style="color: #475569;">ppb (parts per billion)</p>
+        </div>
+
+        <div class="science-card fade-up delay-3">
+          <div class="w-16 h-16 rounded-2xl h-gradient flex items-center justify-center mx-auto mb-6">
+            <i class="fa-solid fa-bolt text-white text-2xl"></i>
+          </div>
+          <h3 class="font-heading font-bold text-xl mb-2" style="color: #0A2B4E;">Negative ORP</h3>
+          <p style="color: #475569; margin-bottom: 1rem;">-100 mV to -800 mV Anti-aging & energy</p>
+          <div class="counter" data-target="-800">0</div>
+          <p class="text-sm mt-2" style="color: #475569;">mV (millivolts)</p>
+        </div>
+      </div>
+
+      <p class="text-center text-sm mt-10" style="color: #475569; font-style: italic;">
+        Every Mizuion water ionizer produces a continuous stream of 5 different water levels, ranging from strong
+        alkaline water (11.5 pH) to strong acidic water (2.5 pH) to meet all your needs..
+      </p>
+    </div>
+  </section>
+
+  <!-- MIZUION ADVANTAGE -->
+  <section class="py-20" style="background-color: #E0F2FE;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+      <div class="fade-up">
+        <h2 class="font-heading font-extrabold text-3xl sm:text-4xl mb-6" style="color: #0A2B4E;">Mizuion Advantage</h2>
+        <p class="text-lg mb-6" style="color: #1E293B;">
+          Medical insight + advanced Japanese electrolysis. Our ionizers transform regular tap water into hydrogen-rich,
+          alkaline water with powerful antioxidant potential.
+        </p>
+        <ul style="list-style: none; padding: 0; margin-bottom: 2rem;">
+          <li class="flex items-center gap-3 mb-4"><i class="fa-solid fa-circle-check text-xl"
+              style="color: #00A8A8;"></i> Reduces oxidative stress</li>
+          <li class="flex items-center gap-3 mb-4"><i class="fa-solid fa-circle-check text-xl"
+              style="color: #00A8A8;"></i> Supports long-life wellness</li>
+          <li class="flex items-center gap-3 mb-4"><i class="fa-solid fa-circle-check text-xl"
+              style="color: #00A8A8;"></i> Enhances hydration & detox</li>
+          <li class="flex items-center gap-3"><i class="fa-solid fa-circle-check text-xl" style="color: #00A8A8;"></i>
+            Improves nutrient absorption</li>
+        </ul>
+        <p class="text-sm" style="color: #475569; font-style: italic;">
+          "Mizuion Japanese Technology - continuously improving water ionization and purification process."
+        </p>
+      </div>
+      <div class="fade-up delay-1">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80"
+          alt="Mizuion Ionizer in Modern Kitchen" class="rounded-3xl shadow-2xl w-full">
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Specifications Summary -->
+  <section class="py-16" style="background-color: #F8FAFC;">
+    <div class="max-w-5xl mx-auto px-4">
+      <h3 class="font-heading font-bold text-2xl sm:text-3xl mb-8 text-center" style="color: #0A2B4E;">Technical
+        Specifications</h3>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4" style="text-align: center;">
+        <!-- pH Adjuster -->
+        <div
+          class="bg-white rounded-2xl p-5 shadow-lg hover:shadow-xl transition-all border-t-4 flex flex-col items-center"
+          style="border-color: #00A8A8;">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-3"
+            style="width: 50px; height: 50px; background: linear-gradient(135deg, #00D2FF, #3A7BD5);">
+            <i class="fa-solid fa-scale-balanced text-white text-xl"></i>
+          </div>
+          <h4 class="font-heading font-bold mb-2" style="color: #0A2B4E; text-align: center; width: 100%;">pH Adjuster
+          </h4>
+          <div class="text-sm" style="color: #475569; text-align: center;">
+            <p style="text-align: center;"><span class="font-semibold" style="color: #00A8A8;">Alkaline:</span> 7.5 -
+              11.5 pH</p>
+            <p style="text-align: center;"><span class="font-semibold" style="color: #00A8A8;">Acidic:</span> 2.5 - 6.5
+              pH</p>
+          </div>
+        </div>
+
+        <!-- ORP -->
+        <div
+          class="bg-white rounded-2xl p-5 shadow-lg hover:shadow-xl transition-all border-t-4 flex flex-col items-center"
+          style="border-color: #00A8A8;">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-3"
+            style="width: 50px; height: 50px; background: linear-gradient(135deg, #00D2FF, #3A7BD5);">
+            <i class="fa-solid fa-wave-square text-white text-xl"></i>
+          </div>
+          <h4 class="font-heading font-bold mb-2" style="color: #0A2B4E; text-align: center; width: 100%;">ORP</h4>
+          <div class="text-sm" style="color: #475569; text-align: center;">
+            <p style="text-align: center;"><span class="font-semibold" style="color: #00A8A8;">-100 mV to -800 mV</span></p>
+          </div>
+        </div>
+
+        <!-- Platinum Plates -->
+        <div
+          class="bg-white rounded-2xl p-5 shadow-lg hover:shadow-xl transition-all border-t-4 flex flex-col items-center"
+          style="border-color: #00A8A8;">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-3"
+            style="width: 50px; height: 50px; background: linear-gradient(135deg, #00D2FF, #3A7BD5);">
+            <i class="fa-solid fa-layer-group text-white text-xl"></i>
+          </div>
+          <h4 class="font-heading font-bold mb-2" style="color: #0A2B4E; text-align: center; width: 100%;">Platinum
+            Plates</h4>
+          <div class="text-sm" style="color: #475569; text-align: center;">
+            <p style="text-align: center;"><span class="font-semibold" style="color: #00A8A8;">7</span> Plates</p>
+            <p style="text-align: center;"><span class="font-semibold" style="color: #00A8A8;">9</span> Plates</p>
+            <p style="text-align: center;"><span class="font-semibold" style="color: #00A8A8;">11</span> Plates</p>
+          </div>
+        </div>
+
+        <!-- Operating Voltage -->
+        <div
+          class="bg-white rounded-2xl p-5 shadow-lg hover:shadow-xl transition-all border-t-4 flex flex-col items-center"
+          style="border-color: #00A8A8;">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-3"
+            style="width: 50px; height: 50px; background: linear-gradient(135deg, #00D2FF, #3A7BD5);">
+            <i class="fa-solid fa-bolt text-white text-xl"></i>
+          </div>
+          <h4 class="font-heading font-bold mb-2" style="color: #0A2B4E; text-align: center; width: 100%;">Operating
+            Voltage</h4>
+          <div class="text-sm" style="color: #475569; text-align: center;">
+            <p style="text-align: center;">Input: <span class="font-semibold" style="color: #00A8A8;">230V AC</span></p>
+            <p style="text-align: center;">Output: <span class="font-semibold" style="color: #00A8A8;">24V - 72V
+                DC</span></p>
+          </div>
+        </div>
+
+        <!-- Output -->
+        <div
+          class="bg-white rounded-2xl p-5 shadow-lg hover:shadow-xl transition-all border-t-4 flex flex-col items-center sm:col-span-2 lg:col-span-1"
+          style="border-color: #00A8A8;">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-3"
+            style="width: 50px; height: 50px; background: linear-gradient(135deg, #00D2FF, #3A7BD5);">
+            <i class="fa-solid fa-arrow-right-arrow-left text-white text-xl"></i>
+          </div>
+          <h4 class="font-heading font-bold mb-2" style="color: #0A2B4E; text-align: center; width: 100%;">Acidic /
+            Alkaline</h4>
+          <div class="text-sm" style="color: #475569; text-align: center;">
+            <p style="text-align: center;"><span class="font-semibold" style="color: #00A8A8;">Dual Output</span> Option
+            </p>
+            <p style="text-align: center;">Separate taps</p>
+          </div>
+        </div>
+        <div
+          class="bg-white rounded-2xl p-5 shadow-lg hover:shadow-xl transition-all border-t-4 flex flex-col items-center sm:col-span-2 lg:col-span-1"
+          style="border-color: #00A8A8;">
+          <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-3"
+            style="width: 50px; height: 50px; background: linear-gradient(135deg, #00D2FF, #3A7BD5);">
+            <i class="fa-solid fa-arrow-right-arrow-left text-white text-xl"></i>
+          </div>
+          <h4 class="font-heading font-bold mb-2" style="color: #0A2B4E; text-align: center; width: 100%;">Safe for
+            Every Age</h4>
+          <div class="text-sm" style="color: #475569; text-align: center;">
+            <p style="text-align: center;"><span class="font-semibold" style="color: #00A8A8;">Safe for anyone</span>
+            </p>
+            <p style="text-align: center;">Best any age.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUALITY & TRUST -->
+  <section id="quality" class="py-20" style="background-color: #F8FAFC;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="fade-up font-heading font-extrabold text-3xl sm:text-4xl text-center mb-4" style="color: #0A2B4E;">
+        Quality & Trust</h2>
+      <p class="fade-up delay-1 text-center max-w-2xl mx-auto mb-12" style="color: #475569;">
+        "Jagdamba Associates - strategic market expansion, nationwide distribution, brand positioning, and comprehensive
+        after-sales service."
+      </p>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="glass-card fade-up delay-1">
+          <div class="w-12 h-12 rounded-xl h-gradient flex items-center justify-center mb-4">
+            <i class="fa-solid fa-certificate text-white"></i>
+          </div>
+          <h3 class="font-heading font-bold text-lg mb-2" style="color: #0A2B4E;">Global Quality Standards</h3>
+          <p class="text-sm" style="color: #475569;">ISO / CE certified, strict testing</p>
+        </div>
+
+        <div class="glass-card fade-up delay-2">
+          <div class="w-12 h-12 rounded-xl h-gradient flex items-center justify-center mb-4">
+            <i class="fa-solid fa-user-cog text-white"></i>
+          </div>
+          <h3 class="font-heading font-bold text-lg mb-2" style="color: #0A2B4E;">In-house Trained Technicians</h3>
+          <p class="text-sm" style="color: #475569;">Installation & service by company employees</p>
+        </div>
+
+        <div class="glass-card fade-up delay-3">
+          <div class="w-12 h-12 rounded-xl h-gradient flex items-center justify-center mb-4">
+            <i class="fa-solid fa-indian-rupee-sign text-white"></i>
+          </div>
+          <h3 class="font-heading font-bold text-lg mb-2" style="color: #0A2B4E;">Transparent Pricing</h3>
+          <p class="text-sm" style="color: #475569;">No hidden commissions for middlemen</p>
+          <p class="text-xs mt-2" style="color: #475569; font-style: italic;">"Transparent pricing, no hidden
+            commissions, faster service, long-term customer relationship management."</p>
+        </div>
+
+        <div class="glass-card fade-up delay-4">
+          <div class="w-12 h-12 rounded-xl h-gradient flex items-center justify-center mb-4">
+            <i class="fa-solid fa-handshake text-white"></i>
+          </div>
+          <h3 class="font-heading font-bold text-lg mb-2" style="color: #0A2B4E;">Long-term Customer Relationship</h3>
+          <p class="text-sm" style="color: #475569;">CRM tracked support & genuine spares</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AFTER-SALES SERVICE -->
+  <section class="py-20 animated-bg text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="rounded-3xl p-8 md:p-12 fade-up"
+        style="background-color: rgba(10,43,78,0.8); backdrop-filter: blur(12px);">
+        <div class="flex flex-col md:flex-row items-start md:items-center gap-6 mb-8">
+          <div class="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl"
+            style="background: rgba(255,255,255,0.2);">
+            <i class="fa-solid fa-headset"></i>
+          </div>
+          <div>
+            <h2 class="font-heading font-extrabold text-2xl md:text-3xl mb-2">After-Sales Service - "Customer is God"
+            </h2>
+            <p style="font-style: italic; opacity: 0.9;">"Client is our God. Dedicated customer support, preventive
+              maintenance, genuine spare parts."</p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <p class="mb-6"><i class="fa-solid fa-map-marker-alt mr-2"></i> Pan India support - Preventive maintenance,
+              fastest service response, genuine spare parts.</p>
+            <div class="space-y-4">
+              <div class="timeline-item flex items-center gap-4">
+                <div class="w-8 h-8 rounded-full flex items-center justify-center font-bold"
+                  style="background: #00D2FF; color: #0A2B4E; font-size: 0.875rem;">1</div> Install
+              </div>
+              <div style="width: 1px; height: 1rem; background: rgba(255,255,255,0.3); margin-left: 1rem;"></div>
+              <div class="timeline-item flex items-center gap-4">
+                <div class="w-8 h-8 rounded-full flex items-center justify-center font-bold"
+                  style="background: #00D2FF; color: #0A2B4E; font-size: 0.875rem;">2</div> Health check
+              </div>
+              <div style="width: 1px; height: 1rem; background: rgba(255,255,255,0.3); margin-left: 1rem;"></div>
+              <div class="timeline-item flex items-center gap-4">
+                <div class="w-8 h-8 rounded-full flex items-center justify-center font-bold"
+                  style="background: #00D2FF; color: #0A2B4E; font-size: 0.875rem;">3</div> Annual maintenance
+              </div>
+              <div style="width: 1px; height: 1rem; background: rgba(255,255,255,0.3); margin-left: 1rem;"></div>
+              <div class="timeline-item flex items-center gap-4">
+                <div class="w-8 h-8 rounded-full flex items-center justify-center font-bold"
+                  style="background: #00D2FF; color: #0A2B4E; font-size: 0.875rem;">4</div> Lifelong support
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-center">
+            <button id="open-modal" class="btn-primary" style="background: white; color: #00A8A8;">Register your
+              product</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION, SUSTAINABILITY, EDUCATION -->
+  <section id="mission" class="py-20" style="background-color: #F8FAFC;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="fade-up font-heading font-extrabold text-3xl sm:text-4xl text-center mb-12" style="color: #0A2B4E;">
+        Mission, Sustainability & Education</h2>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="flip-card fade-up delay-1">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="w-16 h-16 rounded-2xl h-gradient flex items-center justify-center mb-4">
+                <i class="fa-solid fa-bullseye text-white text-2xl"></i>
+              </div>
+              <h3 class="font-heading font-bold text-xl" style="color: #0A2B4E;">Mission</h3>
+              <p class="text-sm mt-2" style="color: #475569;">Hover to flip</p>
+            </div>
+            <div class="flip-card-back">
+              <h3 class="font-heading font-bold text-xl mb-4">Our Mission</h3>
+              <p style="text-align: center;">"Our motto: Har Ghar Mizuion - For better Healthy and Wealthy Growth of
+                India."</p>
+              <p class="text-sm mt-4" style="opacity: 0.8;">Har Ghar Mizuion - for healthy & wealthy India</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card fade-up delay-2">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="w-16 h-16 rounded-2xl h-gradient flex items-center justify-center mb-4">
+                <i class="fa-solid fa-leaf text-white text-2xl"></i>
+              </div>
+              <h3 class="font-heading font-bold text-xl" style="color: #0A2B4E;">Sustainability</h3>
+              <p class="text-sm mt-2" style="color: #475569;">Hover to flip</p>
+            </div>
+            <div class="flip-card-back">
+              <h3 class="font-heading font-bold text-xl mb-4">Sustainability</h3>
+              <p style="text-align: center;">Water conservation + responsible manufacturing. Committed to eco-friendly
+                practices in all our processes.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-card fade-up delay-3">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="w-16 h-16 rounded-2xl h-gradient flex items-center justify-center mb-4">
+                <i class="fa-solid fa-book-open text-white text-2xl"></i>
+              </div>
+              <h3 class="font-heading font-bold text-xl" style="color: #0A2B4E;">Education</h3>
+              <p class="text-sm mt-2" style="color: #475569;">Hover to flip</p>
+            </div>
+            <div class="flip-card-back">
+              <h3 class="font-heading font-bold text-xl mb-4">Education</h3>
+              <p style="text-align: center;">"Educate every Indian about the benefits of alkaline and ionized water."
+              </p>
+              <button class="btn-primary text-sm mt-4 px-6 py-2">Free E-book / Webinar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section class="py-20" style="background: linear-gradient(to bottom, #F8FAFC, #E0F2FE);">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="fade-up font-heading font-extrabold text-3xl sm:text-4xl text-center mb-4" style="color: #0A2B4E;">Our
+        Certifications</h2>
+      <p class="fade-up delay-1 text-center max-w-2xl mx-auto mb-12" style="color: #475569;">Mizuion is committed to
+        quality and compliance with international standards - Made in India initiative.</p>
+
+
+      <!-- Enhanced Certification Grid -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+        <div class="fade-up delay-1 group"
+          style="background: white; border-radius: 1.5rem; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: transform 0.3s ease, box-shadow 0.3s ease; border-left: 4px solid #00A8A8;"
+          onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';"
+          onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)';">
+          <div class="flex items-center gap-4 mb-4">
+            <div
+              style="width: 4rem; height: 4rem; border-radius: 1rem; background: linear-gradient(135deg, #00D2FF, #3A7BD5); display: flex; align-items: center; justify-content: center;">
+              <i class="fa-solid fa-certificate text-white text-2xl"></i>
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-lg" style="color: #0A2B4E;">ISO 9001:2015</h3>
+              <p class="text-xs" style="color: #00A8A8;">Quality Management</p>
+            </div>
+          </div>
+          <img src="Certifications/newCertifications/ISO 9001 2015.png" alt="ISO 9001:2015"
+            style="width: 100%; height: 6rem; object-fit: contain; border-radius: 0.75rem; background: #F8FAFC; padding: 0.5rem;">
+        </div>
+
+        <div class="fade-up delay-2 group"
+          style="background: white; border-radius: 1.5rem; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: transform 0.3s ease, box-shadow 0.3s ease; border-left: 4px solid #00A8A8;"
+          onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';"
+          onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)';">
+          <div class="flex items-center gap-4 mb-4">
+            <div
+              style="width: 4rem; height: 4rem; border-radius: 1rem; background: linear-gradient(135deg, #00D2FF, #3A7BD5); display: flex; align-items: center; justify-content: center;">
+              <i class="fa-solid fa-medal text-white text-2xl"></i>
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-lg" style="color: #0A2B4E;">CE Marking</h3>
+              <p class="text-xs" style="color: #00A8A8;">European Standard</p>
+            </div>
+          </div>
+          <img src="Certifications/newCertifications/CE.png" alt="CE Marking"
+            style="width: 100%; height: 6rem; object-fit: contain; border-radius: 0.75rem; background: #F8FAFC; padding: 0.5rem;">
+        </div>
+
+        <div class="fade-up delay-3 group"
+          style="background: white; border-radius: 1.5rem; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: transform 0.3s ease, box-shadow 0.3s ease; border-left: 4px solid #00A8A8;"
+          onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';"
+          onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)';">
+          <div class="flex items-center gap-4 mb-4">
+            <div
+              style="width: 4rem; height: 4rem; border-radius: 1rem; background: linear-gradient(135deg, #00D2FF, #3A7BD5); display: flex; align-items: center; justify-content: center;">
+              <i class="fa-solid fa-heart-pulse text-white text-2xl"></i>
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-lg" style="color: #0A2B4E;">ISO 13485</h3>
+              <p class="text-xs" style="color: #00A8A8;">Medical Devices</p>
+            </div>
+          </div>
+          <img src="Certifications/newCertifications/ISO 13485.png" alt="ISO 13485"
+            style="width: 100%; height: 6rem; object-fit: contain; border-radius: 0.75rem; background: #F8FAFC; padding: 0.5rem;">
+        </div>
+
+        <div class="fade-up delay-1 group"
+          style="background: white; border-radius: 1.5rem; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: transform 0.3s ease, box-shadow 0.3s ease; border-left: 4px solid #00A8A8;"
+          onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';"
+          onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)';">
+          <div class="flex items-center gap-4 mb-4">
+            <div
+              style="width: 4rem; height: 4rem; border-radius: 1rem; background: linear-gradient(135deg, #00D2FF, #3A7BD5); display: flex; align-items: center; justify-content: center;">
+              <i class="fa-solid fa-industry text-white text-2xl"></i>
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-lg" style="color: #0A2B4E;">GMP Certified</h3>
+              <p class="text-xs" style="color: #00A8A8;">Good Manufacturing</p>
+            </div>
+          </div>
+          <img src="Certifications/newCertifications/GMP CERTIFIED.png" alt="GMP"
+            style="width: 100%; height: 6rem; object-fit: contain; border-radius: 0.75rem; background: #F8FAFC; padding: 0.5rem;">
+        </div>
+
+        <div class="fade-up delay-2 group"
+          style="background: white; border-radius: 1.5rem; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: transform 0.3s ease, box-shadow 0.3s ease; border-left: 4px solid #00A8A8;"
+          onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';"
+          onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)';">
+          <div class="flex items-center gap-4 mb-4">
+            <div
+              style="width: 4rem; height: 4rem; border-radius: 1rem; background: linear-gradient(135deg, #00D2FF, #3A7BD5); display: flex; align-items: center; justify-content: center;">
+              <i class="fa-solid fa-leaf text-white text-2xl"></i>
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-lg" style="color: #0A2B4E;">ISO 14001</h3>
+              <p class="text-xs" style="color: #00A8A8;">Environmental</p>
+            </div>
+          </div>
+          <img src="Certifications/newCertifications/ISO 14001.png" alt="ISO 14001"
+            style="width: 100%; height: 6rem; object-fit: contain; border-radius: 0.75rem; background: #F8FAFC; padding: 0.5rem;">
+        </div>
+
+        <div class="fade-up delay-3 group"
+          style="background: white; border-radius: 1.5rem; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.06); transition: transform 0.3s ease, box-shadow 0.3s ease; border-left: 4px solid #00A8A8;"
+          onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.12)';"
+          onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.06)';">
+          <div class="flex items-center gap-4 mb-4">
+            <div
+              style="width: 4rem; height: 4rem; border-radius: 1rem; background: linear-gradient(135deg, #00D2FF, #3A7BD5); display: flex; align-items: center; justify-content: center;">
+              <i class="fa-solid fa-recycle text-white text-2xl"></i>
+            </div>
+            <div>
+              <h3 class="font-heading font-bold text-lg" style="color: #0A2B4E;">Rohs Compliant</h3>
+              <p class="text-xs" style="color: #00A8A8;">Hazardous Free</p>
+            </div>
+          </div>
+          <img src="Certifications/newCertifications/rohs mark packaging.png" alt="Rohs"
+            style="width: 100%; height: 6rem; object-fit: contain; border-radius: 0.75rem; background: #F8FAFC; padding: 0.5rem;">
+        </div>
+
+        <!-- Make in India - Featured -->
+        <div class="fade-up delay-1 group sm:col-span-2 lg:col-span-3"
+          style="background: linear-gradient(135deg, #0A2B4E, #3A7BD5); border-radius: 1.5rem; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease;"
+          onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 30px rgba(0,0,0,0.15)';"
+          onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.1)';">
+          <div class="flex items-center gap-6 flex-wrap justify-center text-white">
+            <img src="Certifications/newCertifications/makeindia.png" alt="Make in India"
+              style="height: 8rem; border-radius: 1rem; background: rgba(255,255,255,0.1); padding: 1rem;">
+            <div class="text-center md:text-left">
+              <h3 class="font-heading font-bold text-2xl mb-2">Make in India</h3>
+              <p class="opacity-90">Committed to quality and self-reliance - Proudly Made in India initiative supporting
+                domestic manufacturing excellence.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-center mt-10 text-sm" style="color: #475569; font-style: italic;">"Building trust through
+        transparency - Every certification represents our unwavering commitment to quality"</p>
+    </div>
+  </section>
+
+  <!-- VISION & MOTO -->
+  <section class="py-20" style="background-color: #E0F2FE;">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center fade-up">
+      <h2 class="font-heading font-extrabold text-3xl sm:text-4xl mb-8" style="color: #0A2B4E;">Vision & Moto</h2>
+      <p class="text-lg mb-6" style="color: #1E293B; font-style: italic;">
+        "To see a Mizuion Alkaline Ionizer in Every Indian Home & Office - because clean, functional water is the
+        foundation of a better tomorrow."
+      </p>
+      <div class="flex justify-center gap-8 mb-8 flex-wrap">
+        <div class="flex items-center gap-2" style="color: #0A2B4E;"><i class="fa-solid fa-users"
+            style="color: #00A8A8;"></i> Trusted by 10,000+ families</div>
+        <div class="flex items-center gap-2" style="color: #0A2B4E;"><i class="fa-solid fa-award"
+            style="color: #00A8A8;"></i> Japanese Technology</div>
+      </div>
+      <p style="color: #475569;">"Beatable price, unbeatable quality - challenge to top leaders."</p>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section id="contact" class="py-20" style="background-color: #F8FAFC;">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 fade-up">
+      <div class="text-center mb-10">
+        <h2 class="font-heading font-extrabold text-3xl sm:text-4xl mb-4" style="color: #0A2B4E;">Join the Mizuion
+          Family</h2>
+        <p class="text-lg" style="color: #475569;">Take the first step toward antioxidant-rich hydration. Get free
+          consultation & nearest dealer info.</p>
+      </div>
+      <form id="contactForm" class="p-8 md:p-10 rounded-3xl"
+        style="background-color: white; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+        <input type="text" placeholder="Name" class="form-input" required aria-label="Name">
+        <input type="tel" placeholder="Phone" class="form-input" required aria-label="Phone">
+        <input type="text" placeholder="City" class="form-input" required aria-label="City">
+        <button type="submit" class="btn-primary w-full py-3.5 rounded-xl font-semibold text-lg">Submit</button>
+        <p class="text-sm mt-4 text-center" style="color: #475569;"><i class="fa-solid fa-shield-halved mr-2"></i>
+          Guarantee: No spam, no hidden cost</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Waves Container -->
+  <div class="waves-container relative w-full overflow-hidden pointer-events-none"
+    style="height: 80px; background: transparent; margin-bottom: -1px; z-index: 10;">
+    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+      viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"
+      style="position: absolute; bottom: 0; width: 100%; height: 100%;">
+      <defs>
+        <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s58 18 88 18 58-18 88-18 58 18 88 18v44h-352z" />
+      </defs>
+      <g class="parallax">
+        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(10, 43, 78, 0.7)" />
+        <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(0, 168, 168, 0.4)" />
+        <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(58, 123, 213, 0.3)" />
+        <use xlink:href="#gentle-wave" x="48" y="7" fill="#0A2B4E" />
+      </g>
+    </svg>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="text-white py-16 relative"
+    style="background-color: #0A2B4E; border-top: 1px solid rgba(255,255,255,0.05);">
+    <!-- Animated Background Elements -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none opacity-20 z-0">
+      <div class="bubble-layer absolute inset-0"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+
+        <!-- Column 1: Brand Profile -->
+        <div class="space-y-6">
+          <div class="flex items-center gap-3">
+            <img src="Logo.png" alt="Mizuion Logo"
+              class="w-12 h-12 object-contain shadow-lg border border-teal-clean/30 transition-transform duration-300 hover:rotate-12">
+            <div>
+              <h3 class="font-heading font-bold text-2xl text-white tracking-wide">Mizuion<sup
+                  style="font-size: 0.5em; color: #00D2FF;">™</sup></h3>
+              <p class="text-xs text-light-aqua/70 font-body">by Jagdamba Associates</p>
+            </div>
+          </div>
+          <p class="text-sm text-slate-300 leading-relaxed font-body">
+            A premium preventive healthcare initiative bringing state-of-the-art Japanese water ionization technology to
+            homes and businesses across India since 2021.
+          </p>
+          <!-- Trust Badges & Certifications -->
+          <div class="space-y-2">
+            <p class="text-xs font-semibold text-teal-clean tracking-wider uppercase">Quality Standards</p>
+            <div class="flex gap-2 items-center flex-wrap">
+              <img src="Certifications/newCertifications/ISO 9001 2015.png" alt="ISO 9001"
+                class="h-8 transition-transform duration-300 hover:scale-110" title="ISO 9001:2015">
+              <img src="Certifications/newCertifications/CE.png" alt="CE"
+                class="h-8 transition-transform duration-300 hover:scale-110" title="CE Marking">
+              <img src="Certifications/newCertifications/ISO 13485.png" alt="ISO 13485"
+                class="h-8 transition-transform duration-300 hover:scale-110" title="ISO 13485 (Medical Devices)">
+              <img src="Certifications/newCertifications/GMP CERTIFIED.png" alt="GMP"
+                class="h-8 transition-transform duration-300 hover:scale-110" title="GMP Certified">
+              <img src="Certifications/newCertifications/ISO 14001.png" alt="ISO 14001"
+                class="h-8 transition-transform duration-300 hover:scale-110" title="ISO 14001">
+              <img src="Certifications/newCertifications/rohs mark packaging.png" alt="RoHS"
+                class="h-8 transition-transform duration-300 hover:scale-110" title="RoHS Compliant">
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick Navigation -->
+        <div class="space-y-6">
+          <h4 class="font-heading font-bold text-lg text-white border-b-2 border-teal-clean/30 pb-2 inline-block">Quick
+            Links</h4>
+          <ul class="space-y-3 text-sm font-body list-none p-0 m-0">
+            <li>
+              <a href="index.html"
+                class="footer-link text-slate-300 hover:text-h-cyan flex items-center gap-2 transition-all duration-300"
+                style="text-decoration: none;">
+                <i class="fa-solid fa-chevron-right text-[10px] text-teal-clean"></i> Home
+              </a>
+            </li>
+            <li>
+              <a href="products.html"
+                class="footer-link text-slate-300 hover:text-h-cyan flex items-center gap-2 transition-all duration-300"
+                style="text-decoration: none;">
+                <i class="fa-solid fa-chevron-right text-[10px] text-teal-clean"></i> Products Range
+              </a>
+            </li>
+            <li>
+              <a href="about.html"
+                class="footer-link text-slate-300 hover:text-h-cyan flex items-center gap-2 transition-all duration-300"
+                style="text-decoration: none;">
+                <i class="fa-solid fa-chevron-right text-[10px] text-teal-clean"></i> About Us
+              </a>
+            </li>
+            <li>
+              <a href="mission.html"
+                class="footer-link text-slate-300 hover:text-h-cyan flex items-center gap-2 transition-all duration-300"
+                style="text-decoration: none;">
+                <i class="fa-solid fa-chevron-right text-[10px] text-teal-clean"></i> Our Mission
+              </a>
+            </li>
+            <li>
+              <a href="contact.html"
+                class="footer-link text-slate-300 hover:text-h-cyan flex items-center gap-2 transition-all duration-300"
+                style="text-decoration: none;">
+                <i class="fa-solid fa-chevron-right text-[10px] text-teal-clean"></i> Contact Us
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Product Categories -->
+        <div class="space-y-6">
+          <h4 class="font-heading font-bold text-lg text-white border-b-2 border-teal-clean/30 pb-2 inline-block">Our
+            Products</h4>
+          <ul class="space-y-3 text-sm font-body list-none p-0 m-0">
+            <li>
+              <a href="products.html"
+                class="footer-link text-slate-300 hover:text-h-cyan flex items-center gap-2 transition-all duration-300"
+                style="text-decoration: none;">
+                <i class="fa-solid fa-tint text-teal-clean text-xs"></i> Wall mounted and countertop models
+              </a>
+            </li>
+            <li>
+              <a href="products.html"
+                class="footer-link text-slate-300 hover:text-h-cyan flex items-center gap-2 transition-all duration-300"
+                style="text-decoration: none;">
+                <i class="fa-solid fa-filter text-teal-clean text-xs"></i> Undersink Models
+              </a>
+            </li>
+            <li>
+              <a href="products.html"
+                class="footer-link text-slate-300 hover:text-h-cyan flex items-center gap-2 transition-all duration-300"
+                style="text-decoration: none;">
+                <i class="fa-solid fa-building text-teal-clean text-xs"></i> Commercial Systems
+              </a>
+            </li>
+            <li>
+              <a href="product-mip73.html"
+                class="footer-link text-slate-300 hover:text-h-cyan flex items-center gap-2 transition-all duration-300"
+                style="text-decoration: none;">
+                <i class="fa-solid fa-star text-yellow-400 text-xs"></i> Flagship Model (MIP 7.3)
+              </a>
+            </li>
+            <li>
+              <a href="product-undersink-bluetooth.html"
+                class="footer-link text-slate-300 hover:text-h-cyan flex items-center gap-2 transition-all duration-300"
+                style="text-decoration: none;">
+                <i class="fa-solid fa-satellite-dish text-teal-clean text-xs"></i> Wireless Smart Touch Panel Model
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Contact & Socials -->
+        <div class="space-y-6">
+          <h4 class="font-heading font-bold text-lg text-white border-b-2 border-teal-clean/30 pb-2 inline-block">
+            Support & Connect</h4>
+          <ul class="space-y-3.5 text-sm font-body list-none p-0 m-0">
+            <li class="flex items-start gap-3">
+              <i class="fa-solid fa-envelope text-h-cyan mt-1 text-base"></i>
+              <div>
+                <p class="text-xs text-slate-400 font-semibold uppercase">Email Support</p>
+                <a href="mailto:sales@mizuion.com" class="text-slate-200 hover:text-h-cyan transition-colors"
+                  style="text-decoration: none; display: block; margin-top: 2px;">sales@mizuion.com</a>
+                <a href="mailto:account@mizuion.com" class="text-slate-200 hover:text-h-cyan transition-colors"
+                  style="text-decoration: none; display: block;">account@mizuion.com</a>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <i class="fa-solid fa-phone text-h-cyan mt-1 text-base"></i>
+              <div>
+                <p class="text-xs text-slate-400 font-semibold uppercase">Call Hotline</p>
+                <div class="space-y-1 mt-0.5">
+                  <a href="tel:9970007580" class="text-slate-200 hover:text-h-cyan transition-colors block"
+                    style="text-decoration: none;">9970007580</a>
+                  <a href="tel:8308206447" class="text-slate-200 hover:text-h-cyan transition-colors block"
+                    style="text-decoration: none;">8308206447</a>
+                  <a href="tel:9890926033" class="text-slate-200 hover:text-h-cyan transition-colors block"
+                    style="text-decoration: none;">9890926033</a>
+                </div>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <i class="fa-brands fa-whatsapp text-green-400 text-lg mt-0.5"></i>
+              <div>
+                <p class="text-xs text-slate-400 font-semibold uppercase">WhatsApp Chat</p>
+                <a href="https://wa.me/918010886620" target="_blank"
+                  class="text-slate-200 hover:text-green-400 transition-colors font-bold flex items-center gap-1.5 mt-0.5"
+                  style="text-decoration: none;">
+                  8010886620
+                  <span class="inline-block w-2.5 h-2.5 rounded-full bg-green-500 animate-ping"></span>
+                </a>
+              </div>
+            </li>
+          </ul>
+
+          <!-- Social Profiles with unique hover styles -->
+          <div class="pt-2">
+            <p class="text-xs font-semibold text-teal-clean uppercase tracking-wider mb-3">Follow our Handles</p>
+            <div class="flex gap-3">
+              <a href="https://www.facebook.com/mizuion.alkaline.water.ionizer" target="_blank" aria-label="Facebook"
+                class="social-btn footer-social-fb w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300"
+                style="text-decoration: none;">
+                <i class="fa-brands fa-facebook-f text-base"></i>
+              </a>
+              <a href="https://www.instagram.com/mizuion_alkaline_water_ionizer" target="_blank" aria-label="Instagram"
+                class="social-btn footer-social-ig w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300"
+                style="text-decoration: none;">
+                <i class="fa-brands fa-instagram text-base"></i>
+              </a>
+              <a href="https://www.youtube.com/@Mizuionalkalinewaterionizer" target="_blank" aria-label="YouTube"
+                class="social-btn footer-social-yt w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300"
+                style="text-decoration: none;">
+                <i class="fa-brands fa-youtube text-base"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Divider Line -->
+      <div
+        class="border-t pt-8 mt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm font-body text-slate-400"
+        style="border-color: rgba(255,255,255,0.08);">
+        <div>
+          <p>© 2026 Mizuion™ - A preventive healthcare initiative. All rights reserved.</p>
+          <p class="text-xs text-slate-500 mt-1">Managed & Promoted by Jagdamba Associates. Established 2021. | Developed by <a href="https://digibrandz.in/" target="_blank" class="hover:text-h-cyan transition-colors" style="text-decoration: none;">Digibrandz</a></p>
+        </div>
+        <div class="flex items-center gap-2 select-none">
+          <span class="text-slate-400">Har Ghar Mizuion</span>
+          <span class="inline-block animate-bounce text-base">💧</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <button id="backTop" aria-label="Back to top"
+    style="position: fixed; bottom: 1.5rem; right: 1.5rem; width: 3rem; height: 3rem; background: linear-gradient(135deg, #00D2FF, #3A7BD5); color: white; border: none; border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer; opacity: 0; transform: translateY(20px); transition: opacity 0.3s, transform 0.3s; box-shadow: 0 4px 15px rgba(0,210,255,0.4); z-index: 999;">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- MODAL -->
+  <div id="modal">
+    <div
+      style="background-color: white; border-radius: 1rem; padding: 2rem; width: 92%; max-width: 28rem; box-shadow: 0 25px 50px rgba(0,0,0,0.25); position: relative;">
+      <button id="close-modal" aria-label="Close"
+        style="position: absolute; top: 0.75rem; right: 1rem; color: #475569; font-size: 1.25rem; background: none; border: none; cursor: pointer;"><i
+          class="fa-solid fa-xmark"></i></button>
+      <div class="w-14 h-14 rounded-xl flex items-center justify-center text-xl mb-4"
+        style="background: linear-gradient(135deg, #00D2FF, #3A7BD5); color: white;"><i
+          class="fa-regular fa-clipboard"></i></div>
+      <h3 class="font-heading font-bold text-2xl mb-2" style="color: #0A2B4E;">Register Your Product</h3>
+      <p class="text-sm mb-4" style="color: #475569;">Enter your details and our team will activate your warranty &
+        schedule the first service.</p>
+      <div class="space-y-3">
+        <input type="text" placeholder="Full Name"
+          style="width: 100%; padding: 0.75rem 1rem; border: 2px solid #E0F2FE; border-radius: 0.75rem; font-family: 'Inter', sans-serif;">
+        <input type="text" placeholder="Serial / Model No."
+          style="width: 100%; padding: 0.75rem 1rem; border: 2px solid #E0F2FE; border-radius: 0.75rem; font-family: 'Inter', sans-serif;">
+        <input type="tel" placeholder="Phone"
+          style="width: 100%; padding: 0.75rem 1rem; border: 2px solid #E0F2FE; border-radius: 0.75rem; font-family: 'Inter', sans-serif;">
+        <button class="btn-primary w-full py-3 rounded-xl font-semibold">Register Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING SOCIAL SIDEBAR -->
+  <div id="floatingSocial"
+    style="position: fixed; top: 50%; right: 1rem; transform: translateY(-50%); z-index: 998; display: flex; flex-direction: column; gap: 0.75rem;">
+    <!-- Call Button 1 -->
+    <a href="tel:9970007580" aria-label="Call 9970007580" title="Call: 9970007580"
+      style="width: 3rem; height: 3rem; border-radius: 50%; background: linear-gradient(135deg, #00D2FF, #3A7BD5); color: white; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,210,255,0.4); cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease; text-decoration: none;"
+      onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+      <i class="fa-solid fa-phone text-sm"></i>
+    </a>
+
+    <!-- Call Button 2 -->
+    <a href="tel:8308206447" aria-label="Call 8308206447" title="Call: 8308206447"
+      style="width: 3rem; height: 3rem; border-radius: 50%; background: linear-gradient(135deg, #00D2FF, #3A7BD5); color: white; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,210,255,0.4); cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease; text-decoration: none;"
+      onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+      <i class="fa-solid fa-phone text-sm"></i>
+    </a>
+
+    <!-- Call Button 3 -->
+    <a href="tel:9890926033" aria-label="Call 9890926033" title="Call: 9890926033"
+      style="width: 3rem; height: 3rem; border-radius: 50%; background: linear-gradient(135deg, #00D2FF, #3A7BD5); color: white; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,210,255,0.4); cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease; text-decoration: none;"
+      onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+      <i class="fa-solid fa-phone text-sm"></i>
+    </a>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/918010886620" target="_blank" aria-label="WhatsApp" title="WhatsApp: 8010886620"
+      style="width: 3rem; height: 3rem; border-radius: 50%; background: #25D366; color: white; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(37,211,102,0.4); cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease; text-decoration: none;"
+      onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+      <i class="fa-brands fa-whatsapp text-lg"></i>
+    </a>
+
+    <!-- Instagram -->
+    <a href="https://www.instagram.com/mizuion_alkaline_water_ionizer" target="_blank" aria-label="Instagram"
+      title="Mizuion_Alkaline_Water_Ionizer"
+      style="width: 3rem; height: 3rem; border-radius: 50%; background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C); color: white; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(225,48,108,0.4); cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease; text-decoration: none;"
+      onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+      <i class="fa-brands fa-instagram text-lg"></i>
+    </a>
+
+    <!-- Facebook -->
+    <a href="https://www.facebook.com/mizuion.alkaline.water.ionizer" target="_blank" aria-label="Facebook"
+      title="Mizuion alkaline water ionizer"
+      style="width: 3rem; height: 3rem; border-radius: 50%; background: #1877F2; color: white; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(24,119,242,0.4); cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease; text-decoration: none;"
+      onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+      <i class="fa-brands fa-facebook-f text-lg"></i>
+    </a>
+
+    <!-- YouTube -->
+    <a href="https://www.youtube.com/@Mizuionalkalinewaterionizer" target="_blank" aria-label="YouTube"
+      title="Mizuion YouTube Channel"
+      style="width: 3rem; height: 3rem; border-radius: 50%; background: #FF0000; color: white; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(255,0,0,0.4); cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease; text-decoration: none;"
+      onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+      <i class="fa-brands fa-youtube text-lg"></i>
+    </a>
+
+    <!-- Email -->
+    <a href="mailto:sales@mizuion.com" aria-label="Email Sales" title="sales@mizuion.com"
+      style="width: 3rem; height: 3rem; border-radius: 50%; background: #EA4335; color: white; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(234,67,53,0.4); cursor: pointer; transition: transform 0.2s ease, box-shadow 0.2s ease; text-decoration: none;"
+      onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+      <i class="fa-solid fa-envelope text-sm"></i>
+    </a>
+  </div>
+
+  <script>
+    // Navbar scroll
+    const navbar = document.getElementById('navbar');
+    const backTop = document.getElementById('backTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) backTop.classList.add('show');
+      else backTop.classList.remove('show');
+    });
+    backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // Mobile menu
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuToggle.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+
+    // Smooth scroll for mobile menu links
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', (e) => {
+      // Close menu with animation
+      mobileMenu.classList.remove('open');
+      // Smooth scroll to section
+      const targetId = a.getAttribute('href');
+      if (targetId && targetId.startsWith('#')) {
+        e.preventDefault();
+        const targetSection = document.querySelector(targetId);
+        if (targetSection) {
+          setTimeout(() => {
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+          }, 300); // Wait for menu close animation
+        }
+      }
+    }));
+
+    // Reveal on scroll
+    const revealEls = document.querySelectorAll('.fade-up');
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => revealObs.observe(el));
+
+    // Initialize: make hero section visible immediately
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('#home .fade-up').forEach(el => el.classList.add('visible'));
+    });
+
+    // Counters
+    const counters = document.querySelectorAll('.counter');
+    const counterObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const el = e.target;
+          const target = parseFloat(el.dataset.target);
+          const decimals = parseInt(el.dataset.decimals || '0');
+          const duration = 1800;
+          const start = performance.now();
+          function tick(now) {
+            const t = Math.min(1, (now - start) / duration);
+            const eased = 1 - Math.pow(1 - t, 3);
+            const val = 0 + (target - 0) * eased;
+            el.textContent = val.toFixed(decimals);
+            if (t < 1) requestAnimationFrame(tick);
+            else el.textContent = target.toFixed(decimals);
+          }
+          requestAnimationFrame(tick);
+          counterObs.unobserve(el);
+        }
+      });
+    }, { threshold: 0.4 });
+    counters.forEach(c => counterObs.observe(c));
+
+    // Bubbles
+    function spawnBubbles(containerId, count) {
+      const c = document.getElementById(containerId);
+      if (!c) return;
+      for (let i = 0; i < count; i++) {
+        const b = document.createElement('span');
+        const size = Math.random() * 50 + 14;
+        b.className = 'bubble';
+        b.style.width = size + 'px';
+        b.style.height = size + 'px';
+        b.style.left = (Math.random() * 100) + '%';
+        b.style.animationDuration = (Math.random() * 12 + 10) + 's';
+        b.style.animationDelay = (Math.random() * 8) + 's';
+        b.style.opacity = (Math.random() * 0.5 + 0.3).toString();
+        c.appendChild(b);
+      }
+    }
+    spawnBubbles('hero-bubbles', 14);
+    spawnBubbles('footer-bubbles', 10);
+
+    // Modal
+    const modal = document.getElementById('modal');
+    document.getElementById('open-modal').addEventListener('click', () => { modal.classList.add('active'); });
+    document.getElementById('close-modal').addEventListener('click', () => { modal.classList.remove('active'); });
+    modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('active'); });
+
+    // Active nav highlight & smooth scroll for desktop nav
+    const sections = ['home', 'technology', 'quality', 'mission', 'contact'].map(id => document.getElementById(id));
+    const navLinks = document.querySelectorAll('nav .nav-link');
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY + 120;
+      let current = 'home';
+      sections.forEach(s => { if (s && s.offsetTop <= y) current = s.id; });
+      navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + current));
+    });
+
+    // Smooth scroll for ALL nav links (desktop & mobile)
+    document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        const targetId = link.getAttribute('href');
+        if (targetId && targetId.startsWith('#')) {
+          e.preventDefault();
+          const targetSection = document.querySelector(targetId);
+          if (targetSection) {
+            // Close mobile menu if open
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (mobileMenu.classList.contains('open')) {
+              mobileMenu.classList.remove('open');
+            }
+            targetSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        }
+      });
+    });
+
+    // Contact form
+    document.getElementById('contactForm')?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Thank you for your submission! This is a mock form, no data was sent.');
+      e.target.reset();
+    });
+
+    // ── Typewriter Animation ──
+    (function () {
+      const phrases = [
+        'Hydrogen Rich Alkaline Water',
+        'Antioxidant Protection Daily',
+        'High pH · Negative ORP',
+        'Healthier India, Every Sip',
+        'Japanese Technology. Pure Life.',
+      ];
+      const el = document.getElementById('typewriter-text');
+      const cursor = document.getElementById('typewriter-cursor');
+      if (!el || !cursor) return;
+
+      let phraseIdx = 0, charIdx = 0, deleting = false;
+      const TYPE_SPEED = 60, DELETE_SPEED = 35, PAUSE_END = 2200, PAUSE_START = 400;
+
+      function tick() {
+        const phrase = phrases[phraseIdx];
+        if (!deleting) {
+          charIdx++;
+          el.textContent = phrase.slice(0, charIdx);
+          if (charIdx === phrase.length) {
+            deleting = true;
+            setTimeout(tick, PAUSE_END);
+            return;
+          }
+          setTimeout(tick, TYPE_SPEED);
+        } else {
+          charIdx--;
+          el.textContent = phrase.slice(0, charIdx);
+          if (charIdx === 0) {
+            deleting = false;
+            phraseIdx = (phraseIdx + 1) % phrases.length;
+            setTimeout(tick, PAUSE_START);
+            return;
+          }
+          setTimeout(tick, DELETE_SPEED);
+        }
+      }
+      setTimeout(tick, 900);
+    })();
+
+    // Active page highlight
+    (function () {
+      const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+      const activeNavLinks = document.querySelectorAll('#navbar .nav-link');
+      activeNavLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+          link.style.color = '#00D2FF';
+        }
+      });
+    })();
+
+    // Footer Bubble Generator
+    (function () {
+      const bubbleLayer = document.querySelector('.bubble-layer');
+      if (bubbleLayer) {
+        for (let i = 0; i < 15; i++) {
+          const bubble = document.createElement('div');
+          bubble.className = 'footer-bubble';
+          const size = Math.random() * 8 + 4;
+          bubble.style.width = `${size}px`;
+          bubble.style.height = `${size}px`;
+          bubble.style.left = `${Math.random() * 100}%`;
+          bubble.style.bottom = `-20px`;
+          bubble.style.animationDuration = `${Math.random() * 10 + 6}s`;
+          bubble.style.animationDelay = `${Math.random() * 8}s`;
+          bubbleLayer.appendChild(bubble);
+        }
+      }
+    })();
+  </script>
+</body>
+
+</html>

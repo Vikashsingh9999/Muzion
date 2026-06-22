@@ -1,0 +1,258 @@
+<!-- Animated Wave & Footer Styles -->
+<style>
+.waves-container {
+  height: 80px;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  background: transparent;
+  margin-bottom: -1px;
+  z-index: 10;
+}
+.waves {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+.parallax > use {
+  animation: move-forever-footer 20s cubic-bezier(.55,.5,.45,.5) infinite;
+}
+.parallax > use:nth-child(1) { animation-delay: -2s; animation-duration: 7s; }
+.parallax > use:nth-child(2) { animation-delay: -3s; animation-duration: 10s; }
+.parallax > use:nth-child(3) { animation-delay: -4s; animation-duration: 13s; }
+.parallax > use:nth-child(4) { animation-delay: -5s; animation-duration: 18s; }
+
+@keyframes move-forever-footer {
+  0% { transform: translate3d(-90px,0,0); }
+  100% { transform: translate3d(85px,0,0); }
+}
+
+.footer-link { transition: transform 0.2s ease, color 0.2s ease; }
+.footer-link:hover { transform: translateX(6px); color: #00D2FF !important; }
+
+.social-btn { background: rgba(255, 255, 255, 0.06); color: white; transition: all 0.3s ease; }
+.social-btn:hover { color: white !important; transform: translateY(-4px); }
+.footer-social-fb:hover { background-color: #1877F2 !important; box-shadow: 0 4px 15px rgba(24, 119, 242, 0.4) !important; }
+.footer-social-ig:hover { background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C) !important; box-shadow: 0 4px 15px rgba(225, 48, 108, 0.4) !important; }
+.footer-social-yt:hover { background-color: #FF0000 !important; box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4) !important; }
+
+.footer-bubble {
+  position: absolute;
+  background: rgba(0, 210, 255, 0.3);
+  border-radius: 50%;
+  animation: floatUpBubble infinite linear;
+  pointer-events: none;
+}
+@keyframes floatUpBubble {
+  0% { transform: translateY(0) scale(1) translateX(0); opacity: 0; }
+  10% { opacity: 0.3; }
+  90% { opacity: 0.3; }
+  100% { transform: translateY(-300px) scale(0) translateX(-15px); opacity: 0; }
+}
+</style>
+
+<!-- Waves Container -->
+<div class="waves-container relative w-full overflow-hidden pointer-events-none" style="height: 80px; background: transparent; margin-bottom: -1px; z-index: 10;">
+  <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto" style="position: absolute; bottom: 0; width: 100%; height: 100%;">
+    <defs>
+      <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s58 18 88 18 58-18 88-18 58 18 88 18v44h-352z" />
+    </defs>
+    <g class="parallax">
+      <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(10, 43, 78, 0.7)" />
+      <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(0, 168, 168, 0.4)" />
+      <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(58, 123, 213, 0.3)" />
+      <use xlink:href="#gentle-wave" x="48" y="7" fill="#0A2B4E" />
+    </g>
+  </svg>
+</div>
+
+<!-- FOOTER -->
+<footer class="text-white py-16 relative font-body" style="background-color: #0A2B4E; border-top: 1px solid rgba(255,255,255,0.05);">
+  <!-- Animated Background Elements -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none opacity-20 z-0">
+    <div class="bubble-layer absolute inset-0"></div>
+  </div>
+  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+      
+      <!-- Column 1: Brand Profile -->
+      <div class="space-y-6">
+        <div class="flex items-center gap-3">
+          <img src="Logo.png" alt="Mizuion Logo" class="w-12 h-12 object-contain shadow-lg border border-teal-clean/30 transition-transform duration-300 hover:rotate-12">
+          <div>
+            <h3 class="font-heading font-bold text-2xl text-white tracking-wide">Mizuion<sup style="font-size: 0.5em; color: #00D2FF;">™</sup></h3>
+            <p class="text-xs text-light-aqua/70">by Jagdamba Associates</p>
+          </div>
+        </div>
+        <p class="text-sm text-slate-300 leading-relaxed">
+          A premium preventive healthcare initiative bringing state-of-the-art Japanese water ionization technology to homes and businesses across India since 2021.
+        </p>
+        <!-- Trust Badges & Certifications -->
+        <div class="space-y-2">
+          <p class="text-xs font-semibold text-teal-clean tracking-wider uppercase">Quality Standards</p>
+          <div class="flex gap-2 items-center flex-wrap">
+            <img src="Certifications/newCertifications/ISO 9001 2015.png" alt="ISO 9001" class="h-8 transition-transform duration-300 hover:scale-110" title="ISO 9001:2015">
+            <img src="Certifications/newCertifications/CE.png" alt="CE" class="h-8 transition-transform duration-300 hover:scale-110" title="CE Marking">
+            <img src="Certifications/newCertifications/ISO 13485.png" alt="ISO 13485" class="h-8 transition-transform duration-300 hover:scale-110" title="ISO 13485 (Medical Devices)">
+            <img src="Certifications/newCertifications/GMP CERTIFIED.png" alt="GMP" class="h-8 transition-transform duration-300 hover:scale-110" title="GMP Certified">
+            <img src="Certifications/newCertifications/ISO 14001.png" alt="ISO 14001" class="h-8 transition-transform duration-300 hover:scale-110" title="ISO 14001">
+            <img src="Certifications/newCertifications/rohs mark packaging.png" alt="RoHS" class="h-8 transition-transform duration-300 hover:scale-110" title="RoHS Compliant">
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 2: Quick Navigation -->
+      <div class="space-y-6">
+        <h4 class="font-heading font-bold text-lg text-white border-b-2 border-teal-clean/30 pb-2 inline-block">Quick Links</h4>
+        <ul class="space-y-3 text-sm list-none p-0 m-0">
+          <li>
+            <a href="index.html" class="footer-link text-slate-300 hover:text-h-cyan flex items-center gap-2 transition-all duration-300" style="text-decoration: none;">
+              <i class="fa-solid fa-chevron-right text-[10px] text-teal-clean"></i> Home
+            </a>
+          </li>
+          <li>
+            <a href="products.html" class="footer-link text-slate-300 hover:text-h-cyan flex items-center gap-2 transition-all duration-300" style="text-decoration: none;">
+              <i class="fa-solid fa-chevron-right text-[10px] text-teal-clean"></i> Products Range
+            </a>
+          </li>
+          <li>
+            <a href="about.html" class="footer-link text-slate-300 hover:text-h-cyan flex items-center gap-2 transition-all duration-300" style="text-decoration: none;">
+              <i class="fa-solid fa-chevron-right text-[10px] text-teal-clean"></i> About Us
+            </a>
+          </li>
+          <li>
+            <a href="mission.html" class="footer-link text-slate-300 hover:text-h-cyan flex items-center gap-2 transition-all duration-300" style="text-decoration: none;">
+              <i class="fa-solid fa-chevron-right text-[10px] text-teal-clean"></i> Our Mission
+            </a>
+          </li>
+          <li>
+            <a href="contact.html" class="footer-link text-slate-300 hover:text-h-cyan flex items-center gap-2 transition-all duration-300" style="text-decoration: none;">
+              <i class="fa-solid fa-chevron-right text-[10px] text-teal-clean"></i> Contact Us
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Product Categories -->
+      <div class="space-y-6">
+        <h4 class="font-heading font-bold text-lg text-white border-b-2 border-teal-clean/30 pb-2 inline-block">Our Products</h4>
+        <ul class="space-y-3 text-sm list-none p-0 m-0">
+          <li>
+            <a href="products.html" class="footer-link text-slate-300 hover:text-h-cyan flex items-center gap-2 transition-all duration-300" style="text-decoration: none;">
+              <i class="fa-solid fa-tint text-teal-clean text-xs"></i> Wall mounted and countertop models
+            </a>
+          </li>
+          <li>
+            <a href="products.html" class="footer-link text-slate-300 hover:text-h-cyan flex items-center gap-2 transition-all duration-300" style="text-decoration: none;">
+              <i class="fa-solid fa-filter text-teal-clean text-xs"></i> Undersink Models
+            </a>
+          </li>
+          <li>
+            <a href="products.html" class="footer-link text-slate-300 hover:text-h-cyan flex items-center gap-2 transition-all duration-300" style="text-decoration: none;">
+              <i class="fa-solid fa-building text-teal-clean text-xs"></i> Commercial Systems
+            </a>
+          </li>
+          <li>
+            <a href="product-mip73.html" class="footer-link text-slate-300 hover:text-h-cyan flex items-center gap-2 transition-all duration-300" style="text-decoration: none;">
+              <i class="fa-solid fa-star text-yellow-400 text-xs"></i> Flagship Model (MIP 7.3)
+            </a>
+          </li>
+          <li>
+            <a href="product-undersink-bluetooth.html" class="footer-link text-slate-300 hover:text-h-cyan flex items-center gap-2 transition-all duration-300" style="text-decoration: none;">
+              <i class="fa-solid fa-satellite-dish text-teal-clean text-xs"></i> Wireless Smart Touch Panel Model
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Contact & Socials -->
+      <div class="space-y-6">
+        <h4 class="font-heading font-bold text-lg text-white border-b-2 border-teal-clean/30 pb-2 inline-block">Support & Connect</h4>
+        <ul class="space-y-3.5 text-sm list-none p-0 m-0">
+          <li class="flex items-start gap-3">
+            <i class="fa-solid fa-envelope text-h-cyan mt-1 text-base"></i>
+            <div>
+              <p class="text-xs text-slate-400 font-semibold uppercase">Email Support</p>
+              <a href="mailto:sales@mizuion.com" class="text-slate-200 hover:text-h-cyan transition-colors" style="text-decoration: none; display: block; margin-top: 2px;">sales@mizuion.com</a>
+              <a href="mailto:account@mizuion.com" class="text-slate-200 hover:text-h-cyan transition-colors" style="text-decoration: none; display: block;">account@mizuion.com</a>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <i class="fa-solid fa-phone text-h-cyan mt-1 text-base"></i>
+            <div>
+              <p class="text-xs text-slate-400 font-semibold uppercase">Call Hotline</p>
+              <div class="space-y-1 mt-0.5">
+                <a href="tel:9970007580" class="text-slate-200 hover:text-h-cyan transition-colors block" style="text-decoration: none;">9970007580</a>
+                <a href="tel:8308206447" class="text-slate-200 hover:text-h-cyan transition-colors block" style="text-decoration: none;">8308206447</a>
+                <a href="tel:9890926033" class="text-slate-200 hover:text-h-cyan transition-colors block" style="text-decoration: none;">9890926033</a>
+              </div>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <i class="fa-brands fa-whatsapp text-green-400 text-lg mt-0.5"></i>
+            <div>
+              <p class="text-xs text-slate-400 font-semibold uppercase">WhatsApp Chat</p>
+              <a href="https://wa.me/918010886620" target="_blank" class="text-slate-200 hover:text-green-400 transition-colors font-bold flex items-center gap-1.5 mt-0.5" style="text-decoration: none;">
+                8010886620
+                <span class="inline-block w-2.5 h-2.5 rounded-full bg-green-500 animate-ping"></span>
+              </a>
+            </div>
+          </li>
+        </ul>
+        
+        <!-- Social Profiles with unique hover styles -->
+        <div class="pt-2">
+          <p class="text-xs font-semibold text-teal-clean uppercase tracking-wider mb-3">Follow our Handles</p>
+          <div class="flex gap-3">
+            <a href="https://www.facebook.com/mizuion.alkaline.water.ionizer" target="_blank" aria-label="Facebook" class="social-btn footer-social-fb w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300" style="text-decoration: none;">
+              <i class="fa-brands fa-facebook-f text-base"></i>
+            </a>
+            <a href="https://www.instagram.com/mizuion_alkaline_water_ionizer" target="_blank" aria-label="Instagram" class="social-btn footer-social-ig w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300" style="text-decoration: none;">
+              <i class="fa-brands fa-instagram text-base"></i>
+            </a>
+            <a href="https://www.youtube.com/@Mizuionalkalinewaterionizer" target="_blank" aria-label="YouTube" class="social-btn footer-social-yt w-10 h-10 rounded-full flex items-center justify-center transition-all duration-300" style="text-decoration: none;">
+              <i class="fa-brands fa-youtube text-base"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Divider Line -->
+    <div class="border-t pt-8 mt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-400" style="border-color: rgba(255,255,255,0.08);">
+      <div>
+        <p>© 2026 Mizuion™ - A preventive healthcare initiative. All rights reserved.</p>
+        <p class="text-xs text-slate-500 mt-1">Managed & Promoted by Jagdamba Associates. Established 2021. | Developed by <a href="https://digibrandz.in/" target="_blank" class="hover:text-h-cyan transition-colors" style="text-decoration: none;">Digibrandz</a></p>
+      </div>
+      <div class="flex items-center gap-2 select-none">
+        <span class="text-slate-400">Har Ghar Mizuion</span>
+        <span class="inline-block animate-bounce text-base">💧</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Footer Bubble Generator
+(function() {
+  const bubbleLayer = document.querySelector('.bubble-layer');
+  if (bubbleLayer) {
+    for (let i = 0; i < 15; i++) {
+      const bubble = document.createElement('div');
+      bubble.className = 'footer-bubble';
+      const size = Math.random() * 8 + 4;
+      bubble.style.width = `${size}px`;
+      bubble.style.height = `${size}px`;
+      bubble.style.left = `${Math.random() * 100}%`;
+      bubble.style.bottom = `-20px`;
+      bubble.style.animationDuration = `${Math.random() * 10 + 6}s`;
+      bubble.style.animationDelay = `${Math.random() * 8}s`;
+      bubbleLayer.appendChild(bubble);
+    }
+  }
+})();
+</script>
