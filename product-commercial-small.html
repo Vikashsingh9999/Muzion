@@ -222,7 +222,7 @@ h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; }
         </span>
         <h1 class="font-heading font-extrabold text-3xl sm:text-4xl text-tech-blue mb-4">Mizuion™ Commercial Small</h1>
         
-        <p class="text-lg text-slate-600 mb-6 leading-relaxed">A compact, high-performance commercial water ionizer featuring 11 titanium plates. Specially built for small offices, clinics, fitness centers, and medical labs, it delivers continuous high-flow ionized water with stable pH and ORP. It has an integrated multi-stage filtration system that processes water smoothly for groups of 20 to 30 people.</p>
+        <p class="text-lg text-slate-600 mb-6 leading-relaxed">A compact, high-performance commercial water ionizer featuring 21 titanium plates. Specially built for small offices, clinics, fitness centers, and medical labs, it delivers continuous high-flow ionized water with stable pH and ORP. It has an integrated multi-stage filtration system that processes water smoothly for groups of 20 to 30 people.</p>
 
         <!-- CTAs -->
         <div class="flex flex-wrap gap-4 mb-8">
@@ -638,21 +638,34 @@ h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; }
 <style>
 /* Floating Social Sidebar */
 #floatingSocial { 
-  animation: slideInRight 0.5s ease-out; 
+  animation: slideInLeft 0.5s ease-out; 
   transition: transform 0.3s ease;
+  left: 0 !important;
+  right: auto !important;
+  gap: 0.25rem !important;
 }
-@keyframes slideInRight {
-  from { transform: translate(100%, -50%); opacity: 0; }
+@keyframes slideInLeft {
+  from { transform: translate(-100%, -50%); opacity: 0; }
   to { transform: translate(0, -50%); opacity: 1; }
 }
-#floatingSocial a:hover { transform: scale(1.1) !important; }
+#floatingSocial a {
+  border-radius: 0 8px 8px 0 !important;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.15) !important;
+  transition: transform 0.2s ease, padding-left 0.2s ease !important;
+}
+#floatingSocial a:hover { 
+  transform: translateX(6px) !important; 
+  padding-left: 0.25rem !important;
+}
 
 @media (max-width: 768px) {
   #floatingSocial { 
-    top: auto !important; bottom: 1rem !important; 
-    right: 0.5rem !important; left: 0.5rem !important;
-    flex-direction: row !important; justify-content: center !important;
-    transform: none !important;
+    top: 50% !important;
+    bottom: auto !important;
+    left: 0 !important;
+    right: auto !important;
+    flex-direction: column !important;
+    transform: translateY(-50%) !important;
   }
 }
 </style>
